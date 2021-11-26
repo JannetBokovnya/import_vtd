@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAnalizeFile" xml:space="preserve">
+    <value>File analysis</value>
+  </data>
+  <data name="buAddNewImport" xml:space="preserve">
+    <value>Start import</value>
+  </data>
+  <data name="buDeleteImport" xml:space="preserve">
+    <value>Delete Import</value>
+  </data>
+  <data name="BuDictDefectDeleteMap" xml:space="preserve">
+    <value>Cancel linking</value>
+  </data>
+  <data name="BuDictDefectMap" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="BusyContent" xml:space="preserve">
+    <value>Data loading</value>
+  </data>
+  <data name="cAddWithoutLink" xml:space="preserve">
+    <value>Add without linking</value>
+  </data>
+  <data name="cAngleHour" xml:space="preserve">
+    <value>Weld, hour</value>
+  </data>
+  <data name="cAutoLink" xml:space="preserve">
+    <value>Run automatic linking</value>
+  </data>
+  <data name="cAverageCoefficientOnASite" xml:space="preserve">
+    <value>Average coefficient on a site:</value>
+  </data>
+  <data name="cBenchmarkDensityPerKm" xml:space="preserve">
+    <value>Benchmark density per 1 km</value>
+  </data>
+  <data name="cCantLinkBecauseLimit" xml:space="preserve">
+    <value>You can not link {0} and {1}, already linked two pipe mounting components</value>
+  </data>
+  <data name="cChoose" xml:space="preserve">
+    <value>Choose...</value>
+  </data>
+  <data name="cCrackLikeDefects" xml:space="preserve">
+    <value>Crack-like defects, pcs.</value>
+  </data>
+  <data name="cDataImport" xml:space="preserve">
+    <value>Data import</value>
+  </data>
+  <data name="cDataImportIsEnded" xml:space="preserve">
+    <value>Data import completed</value>
+  </data>
+  <data name="cDataImportState" xml:space="preserve">
+    <value>Data import state</value>
+  </data>
+  <data name="cDB" xml:space="preserve">
+    <value>DB</value>
+  </data>
+  <data name="cDefectNumber" xml:space="preserve">
+    <value>Defect number</value>
+  </data>
+  <data name="cDefects" xml:space="preserve">
+    <value>Defects</value>
+  </data>
+  <data name="cErrUnpermittedDeleteImport" xml:space="preserve">
+    <value>No permission to delete import</value>
+  </data>
+  <data name="cFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="cFormDefects" xml:space="preserve">
+    <value>Form defects, pcs.</value>
+  </data>
+  <data name="cImportEndedWithError" xml:space="preserve">
+    <value>Data import completed with an error</value>
+  </data>
+  <data name="cImportIsRunning" xml:space="preserve">
+    <value>Import in progress</value>
+  </data>
+  <data name="cImportStatus" xml:space="preserve">
+    <value>Import state</value>
+  </data>
+  <data name="cKm" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="cLastImportWithError" xml:space="preserve">
+    <value>Last import completed with an error</value>
+  </data>
+  <data name="cLayoutOfPipe" xml:space="preserve">
+    <value>Pipe layout</value>
+  </data>
+  <data name="cLengthM" xml:space="preserve">
+    <value>Length, m</value>
+  </data>
+  <data name="cLinkedBenchmarkNumber" xml:space="preserve">
+    <value>Linked benchmark number, pcs.</value>
+  </data>
+  <data name="cLinkedPipeMountingComponents" xml:space="preserve">
+    <value>Linked pipe mounting components</value>
+  </data>
+  <data name="cM" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="cMagneticAnomalyNumber" xml:space="preserve">
+    <value>Magnetic anomaly number, pcs.</value>
+  </data>
+  <data name="cNoData" xml:space="preserve">
+    <value>No data</value>
+  </data>
+  <data name="cNumber" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="cOffDesignAnomalies" xml:space="preserve">
+    <value>Off-design anomalies, pcs.</value>
+  </data>
+  <data name="cPipeElementNumber" xml:space="preserve">
+    <value>Pipe component number, pcs.</value>
+  </data>
+  <data name="cRunningImportAnotherDeny" xml:space="preserve">
+    <value>Import in progress, you can not start a new import or continue not completed</value>
+  </data>
+  <data name="cStaticticsOfImport" xml:space="preserve">
+    <value>Statistics of import</value>
+  </data>
+  <data name="cStatisticsOfDefectsByGroups" xml:space="preserve">
+    <value>Statistics of defects by groups</value>
+  </data>
+  <data name="cStressCorrosion" xml:space="preserve">
+    <value>Stress-corrosion, pcs.</value>
+  </data>
+  <data name="cTemFromDB" xml:space="preserve">
+    <value>Pipe mounting components from DB</value>
+  </data>
+  <data name="cTemFromFile" xml:space="preserve">
+    <value>Pipe mounting components from import file</value>
+  </data>
+  <data name="cThicknessMm" xml:space="preserve">
+    <value>Thickness, mm</value>
+  </data>
+  <data name="cType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="cWeldAnomalies" xml:space="preserve">
+    <value>Weld anomalies, pcs.</value>
+  </data>
+  <data name="cСorrosionDefects" xml:space="preserve">
+    <value>Сorrosion defects, pcs.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorDeleteImport" xml:space="preserve">
+    <value>Error deleting import</value>
+  </data>
+  <data name="gbDictDefectCompar" xml:space="preserve">
+    <value>Mapped types of defects</value>
+  </data>
+  <data name="gbDictDefectFileImport" xml:space="preserve">
+    <value>Not linked defect types from the import file</value>
+  </data>
+  <data name="gbDictDefectTypeBD" xml:space="preserve">
+    <value>Defect types from DB</value>
+  </data>
+  <data name="gbNewImportBegin" xml:space="preserve">
+    <value>Start, km</value>
+  </data>
+  <data name="gbNewImportData" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="gbNewImportDogovor" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="gbNewImportEnd" xml:space="preserve">
+    <value>End, km</value>
+  </data>
+  <data name="gbNewImportGenPod" xml:space="preserve">
+    <value>General contractor</value>
+  </data>
+  <data name="gbNewImportispolWorc" xml:space="preserve">
+    <value>Contractor</value>
+  </data>
+  <data name="cLengthKm" xml:space="preserve">
+    <value>Length, km</value>
+  </data>
+  <data name="gbNewImportMG" xml:space="preserve">
+    <value>MGP</value>
+  </data>
+  <data name="gbNewImportPipe" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="gbNewImportPlaseWork" xml:space="preserve">
+    <value>Work package</value>
+  </data>
+  <data name="gbNewImportSection" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="grdCompareDefectColumn1" xml:space="preserve">
+    <value>Defect type from DB</value>
+  </data>
+  <data name="grdCompareDefectColumn2" xml:space="preserve">
+    <value>Group name</value>
+  </data>
+  <data name="grdCompareDefectColumn3" xml:space="preserve">
+    <value>Object type from file</value>
+  </data>
+  <data name="cDefectType" xml:space="preserve">
+    <value>Defect type</value>
+  </data>
+  <data name="grdTypeDefectColum2" xml:space="preserve">
+    <value>Group name</value>
+  </data>
+  <data name="gridStatecState" xml:space="preserve">
+    <value>Current status</value>
+  </data>
+  <data name="gridStateDataImport" xml:space="preserve">
+    <value>Import date</value>
+  </data>
+  <data name="gridStatedateContract" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="gridStateFIO" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="gridStateNameFile" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="gridStateNumberContract" xml:space="preserve">
+    <value>Contact number</value>
+  </data>
+  <data name="gridStateSectionPipeline" xml:space="preserve">
+    <value>Gas pipeline section</value>
+  </data>
+  <data name="groupBoxNewImportDataDog" xml:space="preserve">
+    <value>Data on contract</value>
+  </data>
+  <data name="groupBoxNewImportDataSect" xml:space="preserve">
+    <value>Data on the selected section</value>
+  </data>
+  <data name="groupBoxNewImportDownLoad" xml:space="preserve">
+    <value>File upload</value>
+  </data>
+  <data name="groupBoxNewImportVubor" xml:space="preserve">
+    <value>Extended object selection</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="linkNoReperBD" xml:space="preserve">
+    <value>No data for this section</value>
+  </data>
+  <data name="Message21" xml:space="preserve">
+    <value>Error mapping rows</value>
+  </data>
+  <data name="MessageBoxDictDefect1" xml:space="preserve">
+    <value>Error deleting link</value>
+  </data>
+  <data name="MessageBoxDictDefect2" xml:space="preserve">
+    <value>Error linking dictionaries</value>
+  </data>
+  <data name="msgDelImport" xml:space="preserve">
+    <value>Delete PIGI import?</value>
+  </data>
+  <data name="msgDelImportAttantion" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="ReperBuNextMessage" xml:space="preserve">
+    <value>You should link benchmarks to import continue</value>
+  </data>
+  <data name="Repergb1" xml:space="preserve">
+    <value>Benchmarks from DB</value>
+  </data>
+  <data name="Repergb2" xml:space="preserve">
+    <value>Benchmarks from PIGI import file</value>
+  </data>
+  <data name="Repergb3" xml:space="preserve">
+    <value>Mapped objects on the section</value>
+  </data>
+  <data name="cKmM" xml:space="preserve">
+    <value>KM, m</value>
+  </data>
+  <data name="ReperLenMG" xml:space="preserve">
+    <value>ΔKm on MGP, m</value>
+  </data>
+  <data name="ReperLenVTD" xml:space="preserve">
+    <value>ΔKm by PIGI, m</value>
+  </data>
+  <data name="ReperMK" xml:space="preserve">
+    <value>Scale factor link</value>
+  </data>
+  <data name="ReperName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ReperNumberLink" xml:space="preserve">
+    <value>Link number</value>
+  </data>
+  <data name="ReperNumberSec" xml:space="preserve">
+    <value>Section number</value>
+  </data>
+  <data name="ReperTypeobj" xml:space="preserve">
+    <value>Object type</value>
+  </data>
+  <data name="statusChooseImpData" xml:space="preserve">
+    <value>Initial data selection</value>
+  </data>
+  <data name="cDefectsDictionary" xml:space="preserve">
+    <value>Defect dictionary</value>
+  </data>
+  <data name="statusErrCompl" xml:space="preserve">
+    <value>Completed with error</value>
+  </data>
+  <data name="cLinkingReper" xml:space="preserve">
+    <value>Benchmark linking</value>
+  </data>
+  <data name="statusLinkSection" xml:space="preserve">
+    <value>Pipe journal linking</value>
+  </data>
+  <data name="cPipeJornal" xml:space="preserve">
+    <value>Pipe journal</value>
+  </data>
+  <data name="statusSucessCompl" xml:space="preserve">
+    <value>Successfully completed</value>
+  </data>
+  <data name="tabItemSelectdate" xml:space="preserve">
+    <value>Initial data selection</value>
+  </data>
+  <data name="tabItemStateProcess" xml:space="preserve">
+    <value>Change history</value>
+  </data>
+  <data name="tbNameHistory" xml:space="preserve">
+    <value>History of imports</value>
+  </data>
+  <data name="tbResultAnalizFile" xml:space="preserve">
+    <value>File analysis result</value>
+  </data>
+  <data name="cKmOnMg" xml:space="preserve">
+    <value>Km on MGP, m</value>
+  </data>
+  <data name="cKmOnVtd" xml:space="preserve">
+    <value>Km by PIGI, m</value>
+  </data>
+  <data name="tubeJornalLenghtMG" xml:space="preserve">
+    <value>Length by MGP, m</value>
+  </data>
+  <data name="tubeJornalLenghtVTD" xml:space="preserve">
+    <value>Length by PIGI, m</value>
+  </data>
+  <data name="tubeJornalNumberD" xml:space="preserve">
+    <value>Total defects, pcs.</value>
+  </data>
+  <data name="tubeJornalNumberTube" xml:space="preserve">
+    <value>Pipe number</value>
+  </data>
+  <data name="tubeJornalSecLink" xml:space="preserve">
+    <value>Link section</value>
+  </data>
+  <data name="tubeJornalThick" xml:space="preserve">
+    <value>Wall thickness, mm</value>
+  </data>
+  <data name="tubeJornalType" xml:space="preserve">
+    <value>Pipe type</value>
+  </data>
+  <data name="cImportIsRun1" xml:space="preserve">
+    <value>Import procedure is started, import: </value>
+  </data>
+  <data name="cImportIsRun2" xml:space="preserve">
+    <value> it is impossible to start a new import or to continue not completed</value>
+  </data>
+  <data name="tbNoDataDog1" xml:space="preserve">
+    <value>On the selected PIG inspection site and based on the contract</value>
+  </data>
+  <data name="tbNoDataDog2" xml:space="preserve">
+    <value>import of PIG inspection data has been produced previously. For carrying out data import based on the contract</value>
+  </data>
+  <data name="tbNoDataDog3" xml:space="preserve">
+    <value>it is necessary to delete the previous PIGI import executed on its basis</value>
+  </data>
+  <data name="tbNoDataDog4" xml:space="preserve">
+    <value>Select another contract number to PIG inspection carrying out</value>
+  </data>
+  <data name="gbReperLink" xml:space="preserve">
+    <value>Mapped objects on the section</value>
+  </data>
+  <data name="cStartImport" xml:space="preserve">
+    <value>Start import</value>
+  </data>
+</root>

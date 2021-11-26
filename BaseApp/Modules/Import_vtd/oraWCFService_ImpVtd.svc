@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="oraWCFService_ImpVtd" CodeBehind="~/App_Code/Import_vtd_API/oraWCFService_ImpVtd.cs" %>

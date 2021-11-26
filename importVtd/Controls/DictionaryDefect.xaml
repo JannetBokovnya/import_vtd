@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="importVtd.Controls.DictionaryDefect"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:telerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+             mc:Ignorable="d"  Loaded="DictionaryDefect_OnLoaded">
+   
+    <Grid x:Name="LayoutRoot" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <telerik:GroupBox Grid.Column="0" BorderBrush="#FF999A9C">
+                <telerik:GroupBox.Header>
+                    <telerik:Label  Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.gbDictDefectTypeBD, Mode=OneWay}"
+                                    Foreground="#FF555454" Background="Transparent" FontWeight="Bold" />
+                </telerik:GroupBox.Header>
+                <telerikGridView:RadGridView x:Name="grdTypeDefect" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                             AutoGenerateColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False" 
+                                             ColumnWidth="*" IsSynchronizedWithCurrentItem="True" IsReadOnly="True" 
+                                             ShowGroupPanel="False" telerik:StyleManager.Theme="Transparent" >
+                    <telerikGridView:RadGridView.Columns>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding NKEYDEFECT}" Header="KeyDefect" HeaderTextAlignment="Center" IsVisible="False"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding CNAMEDEFECT}" 
+                                                            Header="{Binding Resources_ImpVtd.cDefectType, Mode=OneWay, Source={StaticResource ResProvider}}" 
+                                                            HeaderTextAlignment="Center" TextAlignment="Left" TextWrapping="Wrap"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding CNAMEGROUPDEFECT}" 
+                                                            Header="{Binding Resources_ImpVtd.grdTypeDefectColum2, Mode=OneWay, Source={StaticResource ResProvider}}" 
+                                                            HeaderTextAlignment="Center" TextAlignment="Left" TextWrapping="Wrap"/>
+                    </telerikGridView:RadGridView.Columns>
+                </telerikGridView:RadGridView>
+            </telerik:GroupBox>
+            <Button x:Name="BtnMapingDefect" Click="BtnMapingDefect_OnClick" Grid.Column="1" VerticalAlignment="Top" Margin="8,100,8,8" Height="30">
+                <Image Source="/importVtd;component/Images/link-manual-24.png" Stretch="None"
+                       ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.BuDictDefectMap, Mode=OneWay}"
+                       HorizontalAlignment="Center" />
+            </Button>
+            <telerik:GroupBox  Grid.Column="2" BorderBrush="#FF999A9C">
+                <telerik:GroupBox.Header>
+                    <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.gbDictDefectFileImport, Mode=OneWay}"
+                                   Foreground="#FF555454" Background="Transparent" FontWeight="Bold" />
+                </telerik:GroupBox.Header>
+
+                <telerikGridView:RadGridView x:Name="GrdDefectFile" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                             AutoGenerateColumns="False" CanUserInsertRows="False" CanUserDeleteRows="False" 
+                                             CanUserSortColumns="False" CanUserReorderColumns="False" ColumnWidth="*" 
+                                             IsSynchronizedWithCurrentItem="True" IsReadOnly="True" RowIndicatorVisibility="Collapsed" 
+                                             ShowGroupPanel="False" telerik:StyleManager.Theme="Transparent" >
+                    <telerikGridView:RadGridView.Columns>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding CNAMEDEFECT}" Header="{Binding Resources_ImpVtd.cDefectType, Mode=OneWay, Source={StaticResource ResProvider}}" TextWrapping="Wrap"/>
+                    </telerikGridView:RadGridView.Columns>
+                </telerikGridView:RadGridView>
+            </telerik:GroupBox>
+        </Grid>
+        <telerik:GroupBox  Grid.Row="1" BorderBrush="#FF999A9C">
+            <telerik:GroupBox.Header>
+                <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.gbDictDefectCompar, Mode=OneWay}"
+                               Foreground="#FF555454" Background="Transparent" FontWeight="Bold" />
+            </telerik:GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <telerik:RadButton  HorizontalAlignment="Left" Margin="1,0,0,0" x:Name="BtnDeleteMaping" Background="{x:Null}" BorderBrush="{x:Null}" 
+                                 Click="BuDeleteMaping_OnClick"  >
+                    <Image Source="/importVtd;component/Images/link-del-24.png" Stretch="None"
+                           ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.BuDictDefectDeleteMap, Mode=OneWay}"/>
+                </telerik:RadButton>
+                <telerikGridView:RadGridView Grid.Row="1" x:Name="GrdCompareDefect" telerik:StyleManager.Theme="Transparent" 
+                                             VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ColumnWidth="*"
+                                             SelectionMode="Multiple" ShowGroupPanel="False" CanUserReorderColumns="False" 
+                                             IsSynchronizedWithCurrentItem="True" AlternationCount="2" AlternateRowBackground="#3FCBF1D4"
+			                                 CanUserSortColumns="False" IsReadOnly="True" AutoGenerateColumns="False"	>
+                    <telerikGridView:RadGridView.Columns>
+                        <telerikGridView:GridViewSelectColumn />
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding nKeyMaping}" TextAlignment="Left" HeaderTextAlignment="Center" 
+                                                            TextWrapping="Wrap" Header="KeyMaping"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding nKeyDefect}" TextAlignment="Left" HeaderTextAlignment="Center"
+                                                            TextWrapping="Wrap" Header="KeyDefect"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding cDefectName}" TextAlignment="Center" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.grdCompareDefectColumn1, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding cGroupDefectName}" TextAlignment="Center" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.grdCompareDefectColumn2, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding cFileDefectName}" TextAlignment="Center" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.grdCompareDefectColumn3, Mode=OneWay}"/>
+                    </telerikGridView:RadGridView.Columns>
+                </telerikGridView:RadGridView>
+            </Grid>
+        </telerik:GroupBox>
+        <Grid Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BtnCancel"   Height="30" Click="BtnCancel_OnClick" IsEnabled="False"
+                    Foreground="#FFD4D4D4" BorderBrush="#FFD4D4D4" Background="WhiteSmoke" VerticalAlignment="Bottom"  HorizontalAlignment="Left">
+                <Button.Content>
+                    <Image  Source="/importVtd;component/Images/left.png"  />
+                </Button.Content>
+            </Button>
+            <Button x:Name="BtnNext"  Grid.Column="1" Click="BuNext_OnClick"  VerticalAlignment="Bottom" Height="30"
+                    Foreground="#FFD4D4D4" BorderBrush="#FFD4D4D4" Background="WhiteSmoke"   HorizontalAlignment="Right">
+                <Button.Content>
+                    <Image  Source="/importVtd;component/Images/right.png"  />
+                </Button.Content>
+            </Button>
+        </Grid>
+    </Grid>
+   
+</UserControl>

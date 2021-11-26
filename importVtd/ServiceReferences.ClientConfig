@@ -1,0 +1,18 @@
+﻿<configuration>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_IoraWCFService_ImpVtd" maxBufferSize="2147483647"
+                 maxReceivedMessageSize="2147483647" closeTimeout="19:10:00"
+                 openTimeout="19:10:00" receiveTimeout="19:10:00" sendTimeout="19:10:00">
+          <security mode="None" />
+        </binding>
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="../oraWCFService_ImpVtd.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_IoraWCFService_ImpVtd"
+        contract="startTable.IoraWCFService_ImpVtd" name="BasicHttpBinding_IoraWCFService_ImpVtd" />
+    </client>
+  </system.serviceModel>
+</configuration>

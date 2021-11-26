@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="oraWCFService_ImpVtd" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_ImpVTD_Making_List_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ImpVTD_Making_List" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_ImpVTD_Making_List_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ImpVTD_Making_ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetDBDefect_List_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBDefect_List" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetDBDefect_List_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBDefect_ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetInfoForNewImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoForNewImport" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetInfoForNewImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoForNewImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetDBDefect_ListFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBDefect_ListFile" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetDBDefect_ListFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBDefect_ListFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetDbDefectMaping_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDbDefectMaping" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetDbDefectMaping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDbDefectMapingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_DeleteMapingDict_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMapingDict" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_DeleteMapingDict_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMapingDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_SaveMapingDict_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMapingDict" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_SaveMapingDict_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMapingDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_ImpVTD_Making_One_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ImpVTD_Making_One" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_ImpVTD_Making_One_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ImpVTD_Making_OneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_MG_ImpVtd_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_MG_ImpVtd" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_MG_ImpVtd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_MG_ImpVtdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetThreadsForMg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThreadsForMg" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetThreadsForMg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThreadsForMgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetCountVtdForThread_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountVtdForThread" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetCountVtdForThread_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountVtdForThreadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVTDSec_List_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVTDSec_List" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVTDSec_List_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVTDSec_ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVTDSec_Param_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVTDSec_Param" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVTDSec_Param_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVTDSec_ParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVTD_data_AllList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVTD_data_AllList" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVTD_data_AllList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVTD_data_AllListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_DictDefectXSL_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DictDefectXSL" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_DictDefectXSL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DictDefectXSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVTD_Data_Params_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVTD_Data_Params" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVTD_Data_Params_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVTD_Data_ParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetLeftTableData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeftTableData" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetLeftTableData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeftTableDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetRightTableData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRightTableData" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetRightTableData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRightTableDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetLeftDefectListTube_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeftDefectListTube" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetLeftDefectListTube_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeftDefectListTubeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetRightDefectListTube_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRightDefectListTube" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetRightDefectListTube_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRightDefectListTubeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_VTD_MapsDicts_InputMessage">
+    <wsdl:part name="parameters" element="tns:VTD_MapsDicts" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_VTD_MapsDicts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VTD_MapsDictsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_MapsDicts_InputMessage">
+    <wsdl:part name="parameters" element="tns:MapsDicts" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_MapsDicts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MapsDictsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Getvtdfile_param_InputMessage">
+    <wsdl:part name="parameters" element="tns:Getvtdfile_param" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Getvtdfile_param_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Getvtdfile_paramResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Load_VTDXLSfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:Load_VTDXLSfile" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Load_VTDXLSfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Load_VTDXLSfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetImpLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImpLog" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetImpLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImpLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ApplyKeyMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyKeyMap" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ApplyKeyMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyKeyMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_TubeJournal_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_TubeJournal" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Get_TubeJournal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_TubeJournalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetInfoForVtdImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoForVtdImport" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetInfoForVtdImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoForVtdImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_StatisticsTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatisticsTable" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_StatisticsTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatisticsTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportVTDLaunches_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportVTDLaunches" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportVTDLaunches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportVTDLaunchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportDefects_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportDefects" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportDefects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportDefectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportTubeJournal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTubeJournal" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportTubeJournal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTubeJournalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetUserNameById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameById" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetUserNameById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_DeleteVtdImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVtdImport" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_DeleteVtdImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVtdImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Create_New_ImportVTD_InputMessage">
+    <wsdl:part name="parameters" element="tns:Create_New_ImportVTD" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Create_New_ImportVTD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Create_New_ImportVTDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetKeyUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyUser" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetKeyUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetServiceVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceVersion" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetServiceVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetDbRepers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDbRepers" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetDbRepers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDbRepersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetFileRepers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileRepers" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetFileRepers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileRepersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Load_VTDXLSfileTrue_InputMessage">
+    <wsdl:part name="parameters" element="tns:Load_VTDXLSfileTrue" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_Load_VTDXLSfileTrue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Load_VTDXLSfileTrueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportFile" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_IsOld_VTD_Available_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsOld_VTD_Available" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_IsOld_VTD_Available_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsOld_VTD_AvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_RemoveBound_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBound" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_RemoveBound_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportTubeMatching_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTubeMatching" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_ImportTubeMatching_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTubeMatchingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetTemMapping_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemMapping" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetTemMapping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVtdJobStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVtdJobStatus" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVtdJobStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVtdJobStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVtdImpInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVtdImpInfo" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetVtdImpInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVtdImpInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetJobStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobStatus" />
+  </wsdl:message>
+  <wsdl:message name="IoraWCFService_ImpVtd_GetJobStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IoraWCFService_ImpVtd">
+    <wsdl:operation name="Get_ImpVTD_Making_List">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_ImpVTD_Making_List" message="tns:IoraWCFService_ImpVtd_Get_ImpVTD_Making_List_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_ImpVTD_Making_ListResponse" message="tns:IoraWCFService_ImpVtd_Get_ImpVTD_Making_List_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDBDefect_List">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetDBDefect_List" message="tns:IoraWCFService_ImpVtd_GetDBDefect_List_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetDBDefect_ListResponse" message="tns:IoraWCFService_ImpVtd_GetDBDefect_List_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoForNewImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetInfoForNewImport" message="tns:IoraWCFService_ImpVtd_GetInfoForNewImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetInfoForNewImportResponse" message="tns:IoraWCFService_ImpVtd_GetInfoForNewImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDBDefect_ListFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetDBDefect_ListFile" message="tns:IoraWCFService_ImpVtd_GetDBDefect_ListFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetDBDefect_ListFileResponse" message="tns:IoraWCFService_ImpVtd_GetDBDefect_ListFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDbDefectMaping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetDbDefectMaping" message="tns:IoraWCFService_ImpVtd_GetDbDefectMaping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetDbDefectMapingResponse" message="tns:IoraWCFService_ImpVtd_GetDbDefectMaping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMapingDict">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/DeleteMapingDict" message="tns:IoraWCFService_ImpVtd_DeleteMapingDict_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/DeleteMapingDictResponse" message="tns:IoraWCFService_ImpVtd_DeleteMapingDict_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMapingDict">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/SaveMapingDict" message="tns:IoraWCFService_ImpVtd_SaveMapingDict_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/SaveMapingDictResponse" message="tns:IoraWCFService_ImpVtd_SaveMapingDict_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ImpVTD_Making_One">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_ImpVTD_Making_One" message="tns:IoraWCFService_ImpVtd_Get_ImpVTD_Making_One_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_ImpVTD_Making_OneResponse" message="tns:IoraWCFService_ImpVtd_Get_ImpVTD_Making_One_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MG_ImpVtd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_MG_ImpVtd" message="tns:IoraWCFService_ImpVtd_Get_MG_ImpVtd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_MG_ImpVtdResponse" message="tns:IoraWCFService_ImpVtd_Get_MG_ImpVtd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThreadsForMg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetThreadsForMg" message="tns:IoraWCFService_ImpVtd_GetThreadsForMg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetThreadsForMgResponse" message="tns:IoraWCFService_ImpVtd_GetThreadsForMg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountVtdForThread">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetCountVtdForThread" message="tns:IoraWCFService_ImpVtd_GetCountVtdForThread_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetCountVtdForThreadResponse" message="tns:IoraWCFService_ImpVtd_GetCountVtdForThread_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVTDSec_List">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVTDSec_List" message="tns:IoraWCFService_ImpVtd_GetVTDSec_List_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVTDSec_ListResponse" message="tns:IoraWCFService_ImpVtd_GetVTDSec_List_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVTDSec_Param">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVTDSec_Param" message="tns:IoraWCFService_ImpVtd_GetVTDSec_Param_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVTDSec_ParamResponse" message="tns:IoraWCFService_ImpVtd_GetVTDSec_Param_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVTD_data_AllList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVTD_data_AllList" message="tns:IoraWCFService_ImpVtd_GetVTD_data_AllList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVTD_data_AllListResponse" message="tns:IoraWCFService_ImpVtd_GetVTD_data_AllList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_DictDefectXSL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_DictDefectXSL" message="tns:IoraWCFService_ImpVtd_Get_DictDefectXSL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_DictDefectXSLResponse" message="tns:IoraWCFService_ImpVtd_Get_DictDefectXSL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVTD_Data_Params">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVTD_Data_Params" message="tns:IoraWCFService_ImpVtd_GetVTD_Data_Params_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVTD_Data_ParamsResponse" message="tns:IoraWCFService_ImpVtd_GetVTD_Data_Params_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeftTableData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetLeftTableData" message="tns:IoraWCFService_ImpVtd_GetLeftTableData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetLeftTableDataResponse" message="tns:IoraWCFService_ImpVtd_GetLeftTableData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRightTableData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetRightTableData" message="tns:IoraWCFService_ImpVtd_GetRightTableData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetRightTableDataResponse" message="tns:IoraWCFService_ImpVtd_GetRightTableData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeftDefectListTube">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetLeftDefectListTube" message="tns:IoraWCFService_ImpVtd_GetLeftDefectListTube_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetLeftDefectListTubeResponse" message="tns:IoraWCFService_ImpVtd_GetLeftDefectListTube_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRightDefectListTube">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetRightDefectListTube" message="tns:IoraWCFService_ImpVtd_GetRightDefectListTube_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetRightDefectListTubeResponse" message="tns:IoraWCFService_ImpVtd_GetRightDefectListTube_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VTD_MapsDicts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/VTD_MapsDicts" message="tns:IoraWCFService_ImpVtd_VTD_MapsDicts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/VTD_MapsDictsResponse" message="tns:IoraWCFService_ImpVtd_VTD_MapsDicts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MapsDicts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/MapsDicts" message="tns:IoraWCFService_ImpVtd_MapsDicts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/MapsDictsResponse" message="tns:IoraWCFService_ImpVtd_MapsDicts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Getvtdfile_param">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Getvtdfile_param" message="tns:IoraWCFService_ImpVtd_Getvtdfile_param_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Getvtdfile_paramResponse" message="tns:IoraWCFService_ImpVtd_Getvtdfile_param_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Load_VTDXLSfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Load_VTDXLSfile" message="tns:IoraWCFService_ImpVtd_Load_VTDXLSfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Load_VTDXLSfileResponse" message="tns:IoraWCFService_ImpVtd_Load_VTDXLSfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImpLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetImpLog" message="tns:IoraWCFService_ImpVtd_GetImpLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetImpLogResponse" message="tns:IoraWCFService_ImpVtd_GetImpLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyKeyMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ApplyKeyMap" message="tns:IoraWCFService_ImpVtd_ApplyKeyMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ApplyKeyMapResponse" message="tns:IoraWCFService_ImpVtd_ApplyKeyMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_TubeJournal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_TubeJournal" message="tns:IoraWCFService_ImpVtd_Get_TubeJournal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Get_TubeJournalResponse" message="tns:IoraWCFService_ImpVtd_Get_TubeJournal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoForVtdImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetInfoForVtdImport" message="tns:IoraWCFService_ImpVtd_GetInfoForVtdImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetInfoForVtdImportResponse" message="tns:IoraWCFService_ImpVtd_GetInfoForVtdImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatisticsTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/StatisticsTable" message="tns:IoraWCFService_ImpVtd_StatisticsTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/StatisticsTableResponse" message="tns:IoraWCFService_ImpVtd_StatisticsTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportVTDLaunches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportVTDLaunches" message="tns:IoraWCFService_ImpVtd_ImportVTDLaunches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportVTDLaunchesResponse" message="tns:IoraWCFService_ImpVtd_ImportVTDLaunches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportDefects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportDefects" message="tns:IoraWCFService_ImpVtd_ImportDefects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportDefectsResponse" message="tns:IoraWCFService_ImpVtd_ImportDefects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTubeJournal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportTubeJournal" message="tns:IoraWCFService_ImpVtd_ImportTubeJournal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportTubeJournalResponse" message="tns:IoraWCFService_ImpVtd_ImportTubeJournal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetUserNameById" message="tns:IoraWCFService_ImpVtd_GetUserNameById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetUserNameByIdResponse" message="tns:IoraWCFService_ImpVtd_GetUserNameById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVtdImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/DeleteVtdImport" message="tns:IoraWCFService_ImpVtd_DeleteVtdImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/DeleteVtdImportResponse" message="tns:IoraWCFService_ImpVtd_DeleteVtdImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Create_New_ImportVTD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Create_New_ImportVTD" message="tns:IoraWCFService_ImpVtd_Create_New_ImportVTD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Create_New_ImportVTDResponse" message="tns:IoraWCFService_ImpVtd_Create_New_ImportVTD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetKeyUser" message="tns:IoraWCFService_ImpVtd_GetKeyUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetKeyUserResponse" message="tns:IoraWCFService_ImpVtd_GetKeyUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetServiceVersion" message="tns:IoraWCFService_ImpVtd_GetServiceVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetServiceVersionResponse" message="tns:IoraWCFService_ImpVtd_GetServiceVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDbRepers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetDbRepers" message="tns:IoraWCFService_ImpVtd_GetDbRepers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetDbRepersResponse" message="tns:IoraWCFService_ImpVtd_GetDbRepers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileRepers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetFileRepers" message="tns:IoraWCFService_ImpVtd_GetFileRepers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetFileRepersResponse" message="tns:IoraWCFService_ImpVtd_GetFileRepers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Load_VTDXLSfileTrue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Load_VTDXLSfileTrue" message="tns:IoraWCFService_ImpVtd_Load_VTDXLSfileTrue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/Load_VTDXLSfileTrueResponse" message="tns:IoraWCFService_ImpVtd_Load_VTDXLSfileTrue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportFile" message="tns:IoraWCFService_ImpVtd_ImportFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportFileResponse" message="tns:IoraWCFService_ImpVtd_ImportFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsOld_VTD_Available">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/IsOld_VTD_Available" message="tns:IoraWCFService_ImpVtd_IsOld_VTD_Available_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/IsOld_VTD_AvailableResponse" message="tns:IoraWCFService_ImpVtd_IsOld_VTD_Available_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBound">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/RemoveBound" message="tns:IoraWCFService_ImpVtd_RemoveBound_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/RemoveBoundResponse" message="tns:IoraWCFService_ImpVtd_RemoveBound_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTubeMatching">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportTubeMatching" message="tns:IoraWCFService_ImpVtd_ImportTubeMatching_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/ImportTubeMatchingResponse" message="tns:IoraWCFService_ImpVtd_ImportTubeMatching_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemMapping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetTemMapping" message="tns:IoraWCFService_ImpVtd_GetTemMapping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetTemMappingResponse" message="tns:IoraWCFService_ImpVtd_GetTemMapping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVtdJobStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVtdJobStatus" message="tns:IoraWCFService_ImpVtd_GetVtdJobStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVtdJobStatusResponse" message="tns:IoraWCFService_ImpVtd_GetVtdJobStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVtdImpInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVtdImpInfo" message="tns:IoraWCFService_ImpVtd_GetVtdImpInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetVtdImpInfoResponse" message="tns:IoraWCFService_ImpVtd_GetVtdImpInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetJobStatus" message="tns:IoraWCFService_ImpVtd_GetJobStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IoraWCFService_ImpVtd/GetJobStatusResponse" message="tns:IoraWCFService_ImpVtd_GetJobStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IoraWCFService_ImpVtd" type="tns:IoraWCFService_ImpVtd">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_ImpVTD_Making_List">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/Get_ImpVTD_Making_List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDBDefect_List">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetDBDefect_List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoForNewImport">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetInfoForNewImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDBDefect_ListFile">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetDBDefect_ListFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDbDefectMaping">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetDbDefectMaping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMapingDict">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/DeleteMapingDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMapingDict">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/SaveMapingDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ImpVTD_Making_One">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/Get_ImpVTD_Making_One" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MG_ImpVtd">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/Get_MG_ImpVtd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThreadsForMg">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetThreadsForMg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountVtdForThread">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetCountVtdForThread" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVTDSec_List">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetVTDSec_List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVTDSec_Param">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetVTDSec_Param" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVTD_data_AllList">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetVTD_data_AllList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_DictDefectXSL">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/Get_DictDefectXSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVTD_Data_Params">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetVTD_Data_Params" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeftTableData">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetLeftTableData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRightTableData">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetRightTableData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeftDefectListTube">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetLeftDefectListTube" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRightDefectListTube">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetRightDefectListTube" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VTD_MapsDicts">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/VTD_MapsDicts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MapsDicts">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/MapsDicts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Getvtdfile_param">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/Getvtdfile_param" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Load_VTDXLSfile">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/Load_VTDXLSfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImpLog">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetImpLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyKeyMap">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/ApplyKeyMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_TubeJournal">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/Get_TubeJournal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoForVtdImport">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetInfoForVtdImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatisticsTable">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/StatisticsTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportVTDLaunches">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/ImportVTDLaunches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDefects">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/ImportDefects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTubeJournal">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/ImportTubeJournal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameById">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetUserNameById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVtdImport">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/DeleteVtdImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_New_ImportVTD">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/Create_New_ImportVTD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyUser">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetKeyUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceVersion">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetServiceVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDbRepers">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetDbRepers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileRepers">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetFileRepers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Load_VTDXLSfileTrue">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/Load_VTDXLSfileTrue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportFile">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/ImportFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsOld_VTD_Available">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/IsOld_VTD_Available" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBound">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/RemoveBound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTubeMatching">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/ImportTubeMatching" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemMapping">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetTemMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVtdJobStatus">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetVtdJobStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVtdImpInfo">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetVtdImpInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <soap:operation soapAction="http://tempuri.org/IoraWCFService_ImpVtd/GetJobStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="oraWCFService_ImpVtd">
+    <wsdl:port name="BasicHttpBinding_IoraWCFService_ImpVtd" binding="tns:BasicHttpBinding_IoraWCFService_ImpVtd">
+      <soap:address location="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

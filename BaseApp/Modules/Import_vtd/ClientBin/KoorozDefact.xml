@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<koorozdefects>
+  <defectType id="001" parent ="1" name="корозия до 15%" minPercent="0" maxPercent="15" color="111,255,183">
+  </defectType>
+  <defectType id="002" parent ="1" name="корозия до 15-30%" minPercent="15" maxPercent="30" color="75,160,245">
+  </defectType>
+  <defectType id="003" parent ="1" name="коррозия 30-50%" minPercent="30" maxPercent="50" color="20,64,168">
+  </defectType>
+  <defectType id="004" parent ="1" name="коррозия > 50%" minPercent="50" maxPercent="100" color="255,0,0">
+  </defectType>
+</koorozdefects>

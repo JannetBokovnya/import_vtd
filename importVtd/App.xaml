@@ -1,0 +1,73 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:importVtd.Business"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:controls="clr-namespace:importVtd.Controls"
+             x:Class="importVtd.App" >
+    <Application.Resources>
+ 
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style/LabelInGroup.Style.xaml"/>
+                <ResourceDictionary Source="Style/Button.Style.xaml"/>
+                <ResourceDictionary Source="Style/TextBox.Style.xaml"/>
+                <ResourceDictionary Source="Style/ComboBox.Style.xaml"/>
+                <ResourceDictionary Source="Style/RadGridView.Style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+        <local:ResProvider x:Key="ResProvider"></local:ResProvider>
+        
+        <Style TargetType="Window">
+            <!-- <Setter Property="Height" Value="*"/> -->
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="telerik:RadButton">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Style" Value="{StaticResource MyStyle}" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Style" Value="{StaticResource TextBox_IttStyle}" />
+        </Style>
+        <Style TargetType="telerik:RadComboBox">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="ItemContainerStyle" Value="{StaticResource RadComboBox_IttItemStyle}" />
+            <Setter Property="Style" Value="{StaticResource RadComboBox_IttStyle}" /> 
+        </Style>
+        <Style TargetType="telerik:RadGridView">
+            
+            <Setter Property="ShowGroupPanel" Value="False"/>
+            <Setter Property="CanUserReorderColumns" Value="False"/>
+            <Setter Property="CanUserSortColumns" Value="False"/>
+            <Setter Property="CanUserSortGroups" Value="False"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="RowIndicatorVisibility" Value="Collapsed"/>
+            <Setter Property="IsFilteringAllowed" Value="False" />
+            <Setter Property="EnableLostFocusSelectedState" Value="False" />
+            <Setter Property="FrozenColumnsSplitterVisibility" Value="Collapsed" /> 
+            <Setter Property="HeaderRowStyle" Value="{StaticResource GridViewHeaderRowStyle1}"/>
+            <Setter Property="RowStyle" Value="{StaticResource GridViewRowStyle1}"/>
+            <Setter Property="AlternateRowStyle" Value="{StaticResource GridViewAlternativeRowStyle1}"/> 
+            <Setter Property="telerik:StyleManager.Theme" Value="Transparent"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        <Style TargetType="telerik:CommonColumnHeader">
+            <Setter Property="Background" Value="{Binding BackgroundColorNormal, Mode=OneWay, Source={StaticResource IttStyleParams}}"/>
+            <Setter Property="Foreground" Value="#FF000000"/>
+        </Style>
+
+    </Application.Resources> 
+</Application>

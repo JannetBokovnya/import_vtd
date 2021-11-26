@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ImpVTD_Making">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ImpVTD_Making_List" nillable="true" type="tns:ArrayOfImpVTD_Making_List" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImpVTD_Making" nillable="true" type="tns:ImpVTD_Making" />
+  <xs:complexType name="StatusAnswer_ImpVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusAnswer_ImpVtd" nillable="true" type="tns:StatusAnswer_ImpVtd" />
+  <xs:complexType name="ArrayOfImpVTD_Making_List">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImpVTD_Making_List" nillable="true" type="tns:ImpVTD_Making_List" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImpVTD_Making_List" nillable="true" type="tns:ArrayOfImpVTD_Making_List" />
+  <xs:complexType name="ImpVTD_Making_List">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CFILENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NIMP_MAKING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSTATEKEY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cState1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cStateKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ccode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cnumber_contract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ddate_contract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImpVTD_Making_List" nillable="true" type="tns:ImpVTD_Making_List" />
+  <xs:complexType name="GetDBDefect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetDBDefectList" nillable="true" type="tns:ArrayOfGetDBDefectList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDBDefect" nillable="true" type="tns:GetDBDefect" />
+  <xs:complexType name="ArrayOfGetDBDefectList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetDBDefectList" nillable="true" type="tns:GetDBDefectList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetDBDefectList" nillable="true" type="tns:ArrayOfGetDBDefectList" />
+  <xs:complexType name="GetDBDefectList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNAMEDEFECT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CNAMEGROUPDEFECT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NKEYDEFECT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDBDefectList" nillable="true" type="tns:GetDBDefectList" />
+  <xs:complexType name="InfoForNewImport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetInfoNewImportVtdList" nillable="true" type="tns:ArrayOfInfoForNewImportVtd" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InfoForNewImport" nillable="true" type="tns:InfoForNewImport" />
+  <xs:complexType name="ArrayOfInfoForNewImportVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoForNewImportVtd" nillable="true" type="tns:InfoForNewImportVtd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfoForNewImportVtd" nillable="true" type="tns:ArrayOfInfoForNewImportVtd" />
+  <xs:complexType name="InfoForNewImportVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cMainExecutor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cNameVTG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cNameWork" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cNumberContract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cSubExecutor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dDateContract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="keyContract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="keyMg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="keyPipe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="keySection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nKmBegin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nKmEnd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nLength" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="сMTName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="сPipeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoForNewImportVtd" nillable="true" type="tns:InfoForNewImportVtd" />
+  <xs:complexType name="GetDBDefectFile">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetDBDefectListFile" nillable="true" type="tns:ArrayOfGetDBDefectListFile" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDBDefectFile" nillable="true" type="tns:GetDBDefectFile" />
+  <xs:complexType name="ArrayOfGetDBDefectListFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetDBDefectListFile" nillable="true" type="tns:GetDBDefectListFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetDBDefectListFile" nillable="true" type="tns:ArrayOfGetDBDefectListFile" />
+  <xs:complexType name="GetDBDefectListFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNAMEDEFECT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDBDefectListFile" nillable="true" type="tns:GetDBDefectListFile" />
+  <xs:complexType name="GetDBDefectMaping">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetDBDefectMapingList" nillable="true" type="tns:ArrayOfGetDBDefectMapingList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDBDefectMaping" nillable="true" type="tns:GetDBDefectMaping" />
+  <xs:complexType name="ArrayOfGetDBDefectMapingList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetDBDefectMapingList" nillable="true" type="tns:GetDBDefectMapingList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetDBDefectMapingList" nillable="true" type="tns:ArrayOfGetDBDefectMapingList" />
+  <xs:complexType name="GetDBDefectMapingList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cDefectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cFileDefectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cGroupDefectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nKeyDefect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nKeyMaping" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDBDefectMapingList" nillable="true" type="tns:GetDBDefectMapingList" />
+  <xs:complexType name="MG_ImpVtd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MG_List_ImpVtd" nillable="true" type="tns:ArrayOfMG_List_ImpVtd" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MG_ImpVtd" nillable="true" type="tns:MG_ImpVtd" />
+  <xs:complexType name="ArrayOfMG_List_ImpVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MG_List_ImpVtd" nillable="true" type="tns:MG_List_ImpVtd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMG_List_ImpVtd" nillable="true" type="tns:ArrayOfMG_List_ImpVtd" />
+  <xs:complexType name="MG_List_ImpVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NMAIN_GAS_PIPELINE_KEY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MG_List_ImpVtd" nillable="true" type="tns:MG_List_ImpVtd" />
+  <xs:complexType name="ThreadForMgImpVtd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ThreadForMgListImpVtd" nillable="true" type="tns:ArrayOfThreadForMgListImpVtd" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ThreadForMgImpVtd" nillable="true" type="tns:ThreadForMgImpVtd" />
+  <xs:complexType name="ArrayOfThreadForMgListImpVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThreadForMgListImpVtd" nillable="true" type="tns:ThreadForMgListImpVtd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThreadForMgListImpVtd" nillable="true" type="tns:ArrayOfThreadForMgListImpVtd" />
+  <xs:complexType name="ThreadForMgListImpVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThreadKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThreadForMgListImpVtd" nillable="true" type="tns:ThreadForMgListImpVtd" />
+  <xs:complexType name="CountVtdSec">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountVtdResult" nillable="true" type="tns:CountVtd" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CountVtdSec" nillable="true" type="tns:CountVtdSec" />
+  <xs:complexType name="CountVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountVtdSec" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountVtd" nillable="true" type="tns:CountVtd" />
+  <xs:complexType name="VtdSec">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VtdSecList" nillable="true" type="tns:ArrayOfVtdSecList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VtdSec" nillable="true" type="tns:VtdSec" />
+  <xs:complexType name="ArrayOfVtdSecList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VtdSecList" nillable="true" type="tns:VtdSecList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVtdSecList" nillable="true" type="tns:ArrayOfVtdSecList" />
+  <xs:complexType name="VtdSecList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NameRegion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VtdSectionKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VtdSecList" nillable="true" type="tns:VtdSecList" />
+  <xs:complexType name="VtdSecParam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VtdSecParamItem" nillable="true" type="tns:ArrayOfVtdSecParamItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VtdSecParam" nillable="true" type="tns:VtdSecParam" />
+  <xs:complexType name="ArrayOfVtdSecParamItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VtdSecParamItem" nillable="true" type="tns:VtdSecParamItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVtdSecParamItem" nillable="true" type="tns:ArrayOfVtdSecParamItem" />
+  <xs:complexType name="VtdSecParamItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KmBeginReg" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KmEndReg" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NameRegion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VtdSecParamItem" nillable="true" type="tns:VtdSecParamItem" />
+  <xs:complexType name="VtdNumberDogAllList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VtdDataAllList" nillable="true" type="tns:ArrayOfVtdDataAllList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VtdNumberDogAllList" nillable="true" type="tns:VtdNumberDogAllList" />
+  <xs:complexType name="ArrayOfVtdDataAllList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VtdDataAllList" nillable="true" type="tns:VtdDataAllList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVtdDataAllList" nillable="true" type="tns:ArrayOfVtdDataAllList" />
+  <xs:complexType name="VtdDataAllList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImpCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberContract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VtdDataKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VtdDataAllList" nillable="true" type="tns:VtdDataAllList" />
+  <xs:complexType name="DictDefectXSL_ImpVtd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DictDefectXSL_List_ImpVtd" nillable="true" type="tns:ArrayOfDictDefectXSL_List_ImpVtd" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DictDefectXSL_ImpVtd" nillable="true" type="tns:DictDefectXSL_ImpVtd" />
+  <xs:complexType name="ArrayOfDictDefectXSL_List_ImpVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DictDefectXSL_List_ImpVtd" nillable="true" type="tns:DictDefectXSL_List_ImpVtd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDictDefectXSL_List_ImpVtd" nillable="true" type="tns:ArrayOfDictDefectXSL_List_ImpVtd" />
+  <xs:complexType name="DictDefectXSL_List_ImpVtd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNameDict" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DictDefectXSL_List_ImpVtd" nillable="true" type="tns:DictDefectXSL_List_ImpVtd" />
+  <xs:complexType name="VtdDogovorParams">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VtdDataParams" nillable="true" type="tns:ArrayOfVtdDataParams" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VtdDogovorParams" nillable="true" type="tns:VtdDogovorParams" />
+  <xs:complexType name="ArrayOfVtdDataParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VtdDataParams" nillable="true" type="tns:VtdDataParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVtdDataParams" nillable="true" type="tns:ArrayOfVtdDataParams" />
+  <xs:complexType name="VtdDataParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateContract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainExecutor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Namework" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubExecutor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VtdDataParams" nillable="true" type="tns:VtdDataParams" />
+  <xs:complexType name="VtdTubeBaza">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ListTubeBaza" nillable="true" type="tns:ArrayOfTubeBaza" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VtdTubeBaza" nillable="true" type="tns:VtdTubeBaza" />
+  <xs:complexType name="ArrayOfTubeBaza">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TubeBaza" nillable="true" type="tns:TubeBaza" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTubeBaza" nillable="true" type="tns:ArrayOfTubeBaza" />
+  <xs:complexType name="TubeBaza">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Angle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepthPipe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocKmBeg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumPipePart" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PipeElementMontajKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypePipeKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeShort" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TubeBaza" nillable="true" type="tns:TubeBaza" />
+  <xs:complexType name="ArrayOfDefectListTube">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DefectListTube" nillable="true" type="tns:DefectListTube" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDefectListTube" nillable="true" type="tns:ArrayOfDefectListTube" />
+  <xs:complexType name="DefectListTube">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClockwisePos" type="xs:double" />
+      <xs:element minOccurs="0" name="DefectTypeKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Depth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepthPos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" type="xs:double" />
+      <xs:element minOccurs="0" name="LocNkm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersentCorroz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PipeElem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PipeWallThickness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrevSeamDist" type="xs:double" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DefectListTube" nillable="true" type="tns:DefectListTube" />
+  <xs:complexType name="ArrayOfDefectListTubeRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DefectListTubeRight" nillable="true" type="tns:DefectListTubeRight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDefectListTubeRight" nillable="true" type="tns:ArrayOfDefectListTubeRight" />
+  <xs:complexType name="DefectListTubeRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClockwisePos" type="xs:double" />
+      <xs:element minOccurs="0" name="DefectTypeKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Depth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepthPos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" type="xs:double" />
+      <xs:element minOccurs="0" name="LocNkm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersentCorroz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PipeElem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PipewallThickness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrevSeamDist" type="xs:double" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DefectListTubeRight" nillable="true" type="tns:DefectListTubeRight" />
+  <xs:complexType name="ArrayOfVtdfileParamTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VtdfileParamTable" nillable="true" type="tns:VtdfileParamTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVtdfileParamTable" nillable="true" type="tns:ArrayOfVtdfileParamTable" />
+  <xs:complexType name="VtdfileParamTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContractDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainExecutor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Place" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubExecutor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VtdfileParamTable" nillable="true" type="tns:VtdfileParamTable" />
+  <xs:complexType name="ImpLogVtd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ImpLog_result" nillable="true" type="tns:ImpLog_result" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImpLogVtd" nillable="true" type="tns:ImpLogVtd" />
+  <xs:complexType name="ImpLog_result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImpLog_result_ret" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImpLog_result" nillable="true" type="tns:ImpLog_result" />
+  <xs:complexType name="GetTubeJournal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TubeJournalTableList" nillable="true" type="tns:ArrayOfTubeJournalTableList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTubeJournal" nillable="true" type="tns:GetTubeJournal" />
+  <xs:complexType name="ArrayOfTubeJournalTableList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TubeJournalTableList" nillable="true" type="tns:TubeJournalTableList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTubeJournalTableList" nillable="true" type="tns:ArrayOfTubeJournalTableList" />
+  <xs:complexType name="TubeJournalTableList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Coef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Km" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MgKm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MgLenght" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PipeNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RawKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Thickness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TubeJournalTableList" nillable="true" type="tns:TubeJournalTableList" />
+  <xs:complexType name="ArrayOfInfoForVtdImportTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoForVtdImportTable" nillable="true" type="tns:InfoForVtdImportTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfoForVtdImportTable" nillable="true" type="tns:ArrayOfInfoForVtdImportTable" />
+  <xs:complexType name="InfoForVtdImportTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KmEnd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KmStart" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameRegion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Thread" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoForVtdImportTable" nillable="true" type="tns:InfoForVtdImportTable" />
+  <xs:complexType name="GetStatisticsTable">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StatisticsTableList" nillable="true" type="tns:ArrayOfStatisticsTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetStatisticsTable" nillable="true" type="tns:GetStatisticsTable" />
+  <xs:complexType name="ArrayOfStatisticsTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatisticsTable" nillable="true" type="tns:StatisticsTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatisticsTable" nillable="true" type="tns:ArrayOfStatisticsTable" />
+  <xs:complexType name="StatisticsTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AbnormalAnomaly" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvgCoefCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorrosionDefect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CracklikeDefect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefectsQty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormDefect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MagnAnomCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PipeElemCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepOnKmCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StressCorrosionDefect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransverseJointAnomaly" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsedRepCount" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatisticsTable" nillable="true" type="tns:StatisticsTable" />
+  <xs:complexType name="KeyImpVtd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyImpResult" nillable="true" type="tns:KeyImp" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyImpVtd" nillable="true" type="tns:KeyImpVtd" />
+  <xs:complexType name="KeyImp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyImpVtd" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyImp" nillable="true" type="tns:KeyImp" />
+  <xs:complexType name="KeyUserVtd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyUserResult" nillable="true" type="tns:KeyUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyUserVtd" nillable="true" type="tns:KeyUserVtd" />
+  <xs:complexType name="KeyUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyUserVtd" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyUser" nillable="true" type="tns:KeyUser" />
+  <xs:complexType name="ServiceVersion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceVersionResult" nillable="true" type="tns:ServiceVersionTxt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceVersion" nillable="true" type="tns:ServiceVersion" />
+  <xs:complexType name="ServiceVersionTxt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ServiceVersionTxtVtd" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceVersionTxt" nillable="true" type="tns:ServiceVersionTxt" />
+  <xs:complexType name="GetDbRepers">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DbRepersTableList" nillable="true" type="tns:ArrayOfDbRepersTableList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDbRepers" nillable="true" type="tns:GetDbRepers" />
+  <xs:complexType name="ArrayOfDbRepersTableList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DbRepersTableList" nillable="true" type="tns:DbRepersTableList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDbRepersTableList" nillable="true" type="tns:ArrayOfDbRepersTableList" />
+  <xs:complexType name="DbRepersTableList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Filtertype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Km" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DbRepersTableList" nillable="true" type="tns:DbRepersTableList" />
+  <xs:complexType name="GetFileRepers">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FileRepersList" nillable="true" type="tns:ArrayOfFileRepersList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetFileRepers" nillable="true" type="tns:GetFileRepers" />
+  <xs:complexType name="ArrayOfFileRepersList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileRepersList" nillable="true" type="tns:FileRepersList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFileRepersList" nillable="true" type="tns:ArrayOfFileRepersList" />
+  <xs:complexType name="FileRepersList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilterType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Km" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RawKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileRepersList" nillable="true" type="tns:FileRepersList" />
+  <xs:complexType name="GetImportSecond">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ImportSecond_Result" nillable="true" type="tns:ImportSecondResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetImportSecond" nillable="true" type="tns:GetImportSecond" />
+  <xs:complexType name="ImportSecondResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImportSecondVTD" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportSecondResult" nillable="true" type="tns:ImportSecondResult" />
+  <xs:complexType name="RemoveBound">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RemoveBound_Result" nillable="true" type="tns:RemoveBoundResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveBound" nillable="true" type="tns:RemoveBound" />
+  <xs:complexType name="RemoveBoundResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RemoveBoundVTD" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveBoundResult" nillable="true" type="tns:RemoveBoundResult" />
+  <xs:complexType name="KeyBoundResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetKeyBoundList" nillable="true" type="tns:ArrayOfKeyBound" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyBoundResult" nillable="true" type="tns:KeyBoundResult" />
+  <xs:complexType name="ArrayOfKeyBound">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyBound" nillable="true" type="tns:KeyBound" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyBound" nillable="true" type="tns:ArrayOfKeyBound" />
+  <xs:complexType name="KeyBound">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyBD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeyFile" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyBound" nillable="true" type="tns:KeyBound" />
+  <xs:complexType name="Res_Job">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Res_Job_status" nillable="true" type="tns:Res_Job_status" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Res_Job" nillable="true" type="tns:Res_Job" />
+  <xs:complexType name="Res_Job_status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VTDMakingKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Res_Job_status" nillable="true" type="tns:Res_Job_status" />
+  <xs:complexType name="ArrayOfInfoForOneVtdImport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoForOneVtdImport" nillable="true" type="tns:InfoForOneVtdImport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfoForOneVtdImport" nillable="true" type="tns:ArrayOfInfoForOneVtdImport" />
+  <xs:complexType name="InfoForOneVtdImport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNAMEWORK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cMainExecutor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cSubExecutor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cnamevtg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cnumbercontract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ddatecontract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nkmbegin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nkmend" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nlength" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="сMTName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="сPipeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoForOneVtdImport" nillable="true" type="tns:InfoForOneVtdImport" />
+  <xs:complexType name="JobStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer_ImpVtd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="JobStatus_result" nillable="true" type="tns:JobStatusResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobStatus" nillable="true" type="tns:JobStatus" />
+  <xs:complexType name="JobStatusResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JobStatusVTD" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobStatusResult" nillable="true" type="tns:JobStatusResult" />
+</xs:schema>

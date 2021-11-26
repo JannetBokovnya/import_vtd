@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pipe>
+  <pipeType id="1" name="одношовная" >
+    <key name="одношовная">8100</key>
+  </pipeType>
+  <pipeType id="2" name="двухшовная" >
+    <key name="двухшовная">8200</key>
+  </pipeType>
+  <pipeType id="3" name="безшовная" >
+    <key name="безшовная">8000</key>
+  </pipeType>
+  <pipeType id="4" name="С нераспознанным швом" >
+    <key name="С нераспознанным швом">8400</key>
+  </pipeType>
+  <pipeType id="5" name="Спиральношовная" >
+    <key name="Спиральношовная">8300</key>
+  </pipeType>
+</pipe>

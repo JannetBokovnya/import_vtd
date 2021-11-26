@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4450e89f-8b30-4369-bd96-0d3deccd9263" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="oraWCFService_ImpVtd.disco" MetadataType="Disco" ID="669b2d32-29dc-4964-b16b-45b9e0a7e7ff" SourceId="1" SourceUrl="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc?disco" />
+    <MetadataFile FileName="oraWCFService_ImpVtd.xsd" MetadataType="Schema" ID="a25a09a2-23a3-4f85-9fde-bd7b033a1ee6" SourceId="1" SourceUrl="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc?xsd=xsd1" />
+    <MetadataFile FileName="oraWCFService_ImpVtd.wsdl" MetadataType="Wsdl" ID="a9752d26-e8fe-4348-83a1-68a6d7417fb0" SourceId="1" SourceUrl="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc?wsdl" />
+    <MetadataFile FileName="oraWCFService_ImpVtd1.xsd" MetadataType="Schema" ID="60328c50-8d3f-4b64-9353-00c05f407f97" SourceId="1" SourceUrl="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc?xsd=xsd0" />
+    <MetadataFile FileName="oraWCFService_ImpVtd2.xsd" MetadataType="Schema" ID="53e6ac6f-872d-4947-869b-12ad132e2784" SourceId="1" SourceUrl="http://localhost:57718/BaseApp/Modules/Import_vtd/oraWCFService_ImpVtd.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

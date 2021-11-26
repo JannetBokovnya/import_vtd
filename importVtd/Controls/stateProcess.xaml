@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="importVtd.Controls.StateProcess"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+             xmlns:Controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             mc:Ignorable="d" Loaded="StateProcess_OnLoaded">
+	
+    <Grid x:Name="LayoutRoot" Background="White" VerticalAlignment="Stretch">
+        <Grid.Resources>
+            <DataTemplate x:Key="clickableCellTemplate" >
+                <Border MouseLeftButtonDown="Border_MouseLeftButtonDown"  />
+            </DataTemplate>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition />
+               
+            </Grid.ColumnDefinitions>
+            <Controls:Label Margin="5" Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cImportStatus, Mode=OneWay}"  
+                            FontFamily="Tahoma" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            
+            <Controls:Label x:Name="lbStatusImport" Grid.Column="1"  Margin="5" FontFamily="Tahoma" FontSize="11" 
+                            VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </Grid>
+
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Controls:RadButton Grid.Column="0" Margin="5" x:Name="buAddNewImport" Click="BuAddNewImport_OnClick" >
+                <Image Source="/importVtd;component/Images/add_24_a.png" Stretch="None"
+                       ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.buAddNewImport, Mode=OneWay}" />
+            </Controls:RadButton>
+            <Controls:RadButton Grid.Column="1" Margin="5" x:Name="buDeleteImport" 
+                                Click="BuDeleteImport_OnClick" IsEnabled="False">
+                <Image Source="/importVtd;component/Images/delete_24_a.png" Stretch="None"
+                       ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.buDeleteImport, Mode=OneWay}"/>
+            </Controls:RadButton >
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" x:Name="tbNameHistory" 
+                       Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.tbNameHistory, Mode=OneWay}"
+                       FontWeight="Bold" FontSize="12" FontFamily="Tahoma" >
+            </TextBlock>
+        </Grid>
+        <Grid Grid.Row="2">
+            <telerikGridView:RadGridView Grid.Row="2" Margin="5" x:Name="radImpVTD_Making_List" ColumnWidth="*" 
+                                         RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True" 
+                                         AutoGenerateColumns="False" 				   
+			                             SelectionChanged="radImpVTD_Making_List_SelectionChanged" 
+                                         AlternationCount="2" >
+            <telerikGridView:RadGridView.Columns>
+                <!--участок газопровода-->
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding ccode}" TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.gridStateSectionPipeline, Mode=OneWay}" />
+                <!--название файла-->
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding CFILENAME}" TextAlignment="Center" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.gridStateNameFile, Mode=OneWay}" />
+
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding cStateKey}" TextAlignment="Center" HeaderTextAlignment="Center" 
+                                                    TextWrapping="Wrap" Header="key status import" IsVisible="False" />
+
+                <!--текущий статус-->
+                <telerikGridView:GridViewDataColumn TextAlignment="Center" HeaderTextAlignment="Center" TextWrapping="Wrap" 
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.gridStatecState, Mode=OneWay}" >
+                    <telerikGridView:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding cState}" TextDecorations="Underline" Cursor="Hand" FontWeight="Bold"
+                                       MouseLeftButtonDown="Border_MouseLeftButtonDown" Foreground="#FF3838EA" />
+                        </DataTemplate>
+                    </telerikGridView:GridViewColumn.CellTemplate>
+
+                </telerikGridView:GridViewDataColumn>
+
+                <!--дата импорта-->
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding dTime}" TextAlignment="Center" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.gridStateDataImport, Mode=OneWay}"/>
+                <!--автор-->
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding fio}" TextAlignment="Center" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.gridStateFIO, Mode=OneWay}"/>
+                <!--номер договора-->
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding cnumber_contract}" TextAlignment="Center" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.gridStateNumberContract, Mode=OneWay}"/>
+                <!--дата проведения дата договора-->
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding ddate_contract}" TextAlignment="Center" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.gridStatedateContract, Mode=OneWay}"/>
+
+                <telerikGridView:GridViewDataColumn Header="Key" DataMemberBinding="{Binding NIMP_MAKING}" IsVisible="False"/>
+
+                <telerikGridView:GridViewDataColumn Header="Ключ статуса"  DataMemberBinding="{Binding NavigateTo}" IsVisible="False"/>
+
+                <telerikGridView:GridViewDataColumn Header="Ключ пользователя"  DataMemberBinding="{Binding userKey}" IsVisible="False"/>
+
+            </telerikGridView:RadGridView.Columns>
+        </telerikGridView:RadGridView>
+    </Grid>
+    </Grid>
+</UserControl>

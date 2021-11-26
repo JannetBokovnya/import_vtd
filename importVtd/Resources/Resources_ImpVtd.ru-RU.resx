@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAnalizeFile" xml:space="preserve">
+    <value>Анализ файла</value>
+  </data>
+  <data name="buAddNewImport" xml:space="preserve">
+    <value>Начать импорт</value>
+  </data>
+  <data name="buDeleteImport" xml:space="preserve">
+    <value>Удалить импорт</value>
+  </data>
+  <data name="BuDictDefectDeleteMap" xml:space="preserve">
+    <value>Отменить увязку</value>
+  </data>
+  <data name="BuDictDefectMap" xml:space="preserve">
+    <value>Увязать</value>
+  </data>
+  <data name="BusyContent" xml:space="preserve">
+    <value>Загрузка данных</value>
+  </data>
+  <data name="cAddWithoutLink" xml:space="preserve">
+    <value>Добавить без увязки</value>
+  </data>
+  <data name="cAngleHour" xml:space="preserve">
+    <value>Шов, час</value>
+  </data>
+  <data name="cAutoLink" xml:space="preserve">
+    <value>Запустить автоматическую увязку</value>
+  </data>
+  <data name="cAverageCoefficientOnASite" xml:space="preserve">
+    <value>Средний коэффициент на участке</value>
+  </data>
+  <data name="cBenchmarkDensityPerKm" xml:space="preserve">
+    <value>Плотность реперов на 1 км</value>
+  </data>
+  <data name="cCantLinkBecauseLimit" xml:space="preserve">
+    <value>Нельзя связать {0} и {1}, уже увязано два трубных элемента</value>
+  </data>
+  <data name="cChoose" xml:space="preserve">
+    <value>Выберите данные...</value>
+  </data>
+  <data name="cCrackLikeDefects" xml:space="preserve">
+    <value>Трещиноподобные дефекты, шт.</value>
+  </data>
+  <data name="cDataImport" xml:space="preserve">
+    <value>Импорт данных</value>
+  </data>
+  <data name="cDataImportIsEnded" xml:space="preserve">
+    <value>Импорт данных завершился</value>
+  </data>
+  <data name="cDataImportState" xml:space="preserve">
+    <value>Состояние импорта данных</value>
+  </data>
+  <data name="cDB" xml:space="preserve">
+    <value>БД</value>
+  </data>
+  <data name="cDefectNumber" xml:space="preserve">
+    <value>Количество дефектов</value>
+  </data>
+  <data name="cDefects" xml:space="preserve">
+    <value>Кол-во деф.</value>
+  </data>
+  <data name="cErrUnpermittedDeleteImport" xml:space="preserve">
+    <value>Нет прав на удаление импорта</value>
+  </data>
+  <data name="cFile" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="cFormDefects" xml:space="preserve">
+    <value>Дефекты формы, шт.</value>
+  </data>
+  <data name="cImportEndedWithError" xml:space="preserve">
+    <value>Импорт данных завершился с ошибкой</value>
+  </data>
+  <data name="cImportIsRunning" xml:space="preserve">
+    <value>Выполняется импорт</value>
+  </data>
+  <data name="cImportStatus" xml:space="preserve">
+    <value>Состояние импорта</value>
+  </data>
+  <data name="cKm" xml:space="preserve">
+    <value>км</value>
+  </data>
+  <data name="cLastImportWithError" xml:space="preserve">
+    <value>Последний импорт завершился с ошибкой</value>
+  </data>
+  <data name="cLayoutOfPipe" xml:space="preserve">
+    <value>Раскладка труб</value>
+  </data>
+  <data name="cLengthM" xml:space="preserve">
+    <value>Длина, м</value>
+  </data>
+  <data name="cLinkedBenchmarkNumber" xml:space="preserve">
+    <value>Количество связанных реперов, шт.</value>
+  </data>
+  <data name="cLinkedPipeMountingComponents" xml:space="preserve">
+    <value>Сопоставленные трубные элементы</value>
+  </data>
+  <data name="cM" xml:space="preserve">
+    <value>м</value>
+  </data>
+  <data name="cMagneticAnomalyNumber" xml:space="preserve">
+    <value>Количество магнитных аномалий, шт.</value>
+  </data>
+  <data name="cNoData" xml:space="preserve">
+    <value>Нет данных</value>
+  </data>
+  <data name="cNumber" xml:space="preserve">
+    <value>№</value>
+  </data>
+  <data name="cOffDesignAnomalies" xml:space="preserve">
+    <value>Нерасчетные аномалии, шт.</value>
+  </data>
+  <data name="cPipeElementNumber" xml:space="preserve">
+    <value>Количество трубных элементов, шт.</value>
+  </data>
+  <data name="cRunningImportAnotherDeny" xml:space="preserve">
+    <value>Выполняется импорт, нельзя начать новый импорт или продолжить не завершенный</value>
+  </data>
+  <data name="cStaticticsOfImport" xml:space="preserve">
+    <value>Статистика импорта</value>
+  </data>
+  <data name="cStatisticsOfDefectsByGroups" xml:space="preserve">
+    <value>Статистика дефектов по группам</value>
+  </data>
+  <data name="cStressCorrosion" xml:space="preserve">
+    <value>Стресс-коррозии, шт.</value>
+  </data>
+  <data name="cTemFromDB" xml:space="preserve">
+    <value>Трубные элементы из БД</value>
+  </data>
+  <data name="cTemFromFile" xml:space="preserve">
+    <value>Трубные элементы из файла импорта ВТД</value>
+  </data>
+  <data name="cThicknessMm" xml:space="preserve">
+    <value>Толщина, мм</value>
+  </data>
+  <data name="cType" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="cWeldAnomalies" xml:space="preserve">
+    <value>Аномалии шва, шт.</value>
+  </data>
+  <data name="cСorrosionDefects" xml:space="preserve">
+    <value>Коррозионные дефекты, шт.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ErrorDeleteImport" xml:space="preserve">
+    <value>Ошибка удаления импорта</value>
+  </data>
+  <data name="gbDictDefectCompar" xml:space="preserve">
+    <value>Сопоставленные типы дефектов</value>
+  </data>
+  <data name="gbDictDefectFileImport" xml:space="preserve">
+    <value>Не связанные типы дефектов из файла импорта</value>
+  </data>
+  <data name="gbDictDefectTypeBD" xml:space="preserve">
+    <value>Типы дефектов из БД</value>
+  </data>
+  <data name="gbNewImportBegin" xml:space="preserve">
+    <value>Начало, км</value>
+  </data>
+  <data name="gbNewImportData" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="gbNewImportDogovor" xml:space="preserve">
+    <value>Договор</value>
+  </data>
+  <data name="gbNewImportEnd" xml:space="preserve">
+    <value>Конец, км</value>
+  </data>
+  <data name="gbNewImportGenPod" xml:space="preserve">
+    <value>Генеральный подрядчик</value>
+  </data>
+  <data name="gbNewImportispolWorc" xml:space="preserve">
+    <value>Исполнитель работ</value>
+  </data>
+  <data name="cLengthKm" xml:space="preserve">
+    <value>Длина, км</value>
+  </data>
+  <data name="gbNewImportMG" xml:space="preserve">
+    <value>МГ</value>
+  </data>
+  <data name="gbNewImportPipe" xml:space="preserve">
+    <value>Нитка</value>
+  </data>
+  <data name="gbNewImportPlaseWork" xml:space="preserve">
+    <value>Место работ</value>
+  </data>
+  <data name="gbNewImportSection" xml:space="preserve">
+    <value>Участок</value>
+  </data>
+  <data name="grdCompareDefectColumn1" xml:space="preserve">
+    <value>Тип дефекта из БД</value>
+  </data>
+  <data name="grdCompareDefectColumn2" xml:space="preserve">
+    <value>Название группы</value>
+  </data>
+  <data name="grdCompareDefectColumn3" xml:space="preserve">
+    <value>Тип объекта из файла</value>
+  </data>
+  <data name="cDefectType" xml:space="preserve">
+    <value>Тип дефекта</value>
+  </data>
+  <data name="grdTypeDefectColum2" xml:space="preserve">
+    <value>Название группы</value>
+  </data>
+  <data name="gridStatecState" xml:space="preserve">
+    <value>Текущий статус</value>
+  </data>
+  <data name="gridStateDataImport" xml:space="preserve">
+    <value>Дата импорта</value>
+  </data>
+  <data name="gridStatedateContract" xml:space="preserve">
+    <value>Дата проведения</value>
+  </data>
+  <data name="gridStateFIO" xml:space="preserve">
+    <value>Автор</value>
+  </data>
+  <data name="gridStateNameFile" xml:space="preserve">
+    <value>Название файла</value>
+  </data>
+  <data name="gridStateNumberContract" xml:space="preserve">
+    <value>Номер договора</value>
+  </data>
+  <data name="gridStateSectionPipeline" xml:space="preserve">
+    <value>Участок газопровода</value>
+  </data>
+  <data name="groupBoxNewImportDataDog" xml:space="preserve">
+    <value>Данные по договору</value>
+  </data>
+  <data name="groupBoxNewImportDataSect" xml:space="preserve">
+    <value>Данные по выбранному участку</value>
+  </data>
+  <data name="groupBoxNewImportDownLoad" xml:space="preserve">
+    <value>Загрузка файла</value>
+  </data>
+  <data name="groupBoxNewImportVubor" xml:space="preserve">
+    <value>Выбор протяженного объекта</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="linkNoReperBD" xml:space="preserve">
+    <value>Нет данных для данного участка</value>
+  </data>
+  <data name="Message21" xml:space="preserve">
+    <value>Ошибка сопоставления строк</value>
+  </data>
+  <data name="MessageBoxDictDefect1" xml:space="preserve">
+    <value>Ошибка удаления связи</value>
+  </data>
+  <data name="MessageBoxDictDefect2" xml:space="preserve">
+    <value>Ошибка увязывания словарей</value>
+  </data>
+  <data name="msgDelImport" xml:space="preserve">
+    <value>Удалить импорт ВТД?</value>
+  </data>
+  <data name="msgDelImportAttantion" xml:space="preserve">
+    <value>Внимание</value>
+  </data>
+  <data name="ReperBuNextMessage" xml:space="preserve">
+    <value>Для продолжения импорта необходимо увязать реперы</value>
+  </data>
+  <data name="Repergb1" xml:space="preserve">
+    <value>Реперы из БД</value>
+  </data>
+  <data name="Repergb2" xml:space="preserve">
+    <value>Реперы из файла импорта ВТД</value>
+  </data>
+  <data name="Repergb3" xml:space="preserve">
+    <value>Сопоставленные объекты на участке</value>
+  </data>
+  <data name="cKmM" xml:space="preserve">
+    <value>КМ, м</value>
+  </data>
+  <data name="ReperLenMG" xml:space="preserve">
+    <value>ΔКм по МГ, м</value>
+  </data>
+  <data name="ReperLenVTD" xml:space="preserve">
+    <value>ΔКм по ВТД, м</value>
+  </data>
+  <data name="ReperMK" xml:space="preserve">
+    <value>МК увязывания</value>
+  </data>
+  <data name="ReperName" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="ReperNumberLink" xml:space="preserve">
+    <value>Номер связи</value>
+  </data>
+  <data name="ReperNumberSec" xml:space="preserve">
+    <value>Количество секций</value>
+  </data>
+  <data name="ReperTypeobj" xml:space="preserve">
+    <value>Тип объекта</value>
+  </data>
+  <data name="statusChooseImpData" xml:space="preserve">
+    <value>Выбор исходных данных</value>
+  </data>
+  <data name="cDefectsDictionary" xml:space="preserve">
+    <value>Словарь дефектов</value>
+  </data>
+  <data name="statusErrCompl" xml:space="preserve">
+    <value>Завершен с ошибкой</value>
+  </data>
+  <data name="cLinkingReper" xml:space="preserve">
+    <value>Увязывание реперов</value>
+  </data>
+  <data name="statusLinkSection" xml:space="preserve">
+    <value>Увязывание трубных журналов</value>
+  </data>
+  <data name="cPipeJornal" xml:space="preserve">
+    <value>Раскладка труб</value>
+  </data>
+  <data name="statusSucessCompl" xml:space="preserve">
+    <value>Завершен успешно</value>
+  </data>
+  <data name="tabItemSelectdate" xml:space="preserve">
+    <value>Выбор исходных данных</value>
+  </data>
+  <data name="tabItemStateProcess" xml:space="preserve">
+    <value>История изменений</value>
+  </data>
+  <data name="tbNameHistory" xml:space="preserve">
+    <value>История проведения импортов</value>
+  </data>
+  <data name="tbResultAnalizFile" xml:space="preserve">
+    <value>Результат анализа файла</value>
+  </data>
+  <data name="cKmOnMg" xml:space="preserve">
+    <value>Км по МГ, м</value>
+  </data>
+  <data name="cKmOnVtd" xml:space="preserve">
+    <value>Км по ВТД, м</value>
+  </data>
+  <data name="tubeJornalLenghtMG" xml:space="preserve">
+    <value>Длина по МГ, м</value>
+  </data>
+  <data name="tubeJornalLenghtVTD" xml:space="preserve">
+    <value>Длина по ВТД, м</value>
+  </data>
+  <data name="tubeJornalNumberD" xml:space="preserve">
+    <value>Количество дефектов, шт.</value>
+  </data>
+  <data name="tubeJornalNumberTube" xml:space="preserve">
+    <value>Номер трубы</value>
+  </data>
+  <data name="tubeJornalSecLink" xml:space="preserve">
+    <value>Участок увязки</value>
+  </data>
+  <data name="tubeJornalThick" xml:space="preserve">
+    <value>Толщина стенки, мм</value>
+  </data>
+  <data name="tubeJornalType" xml:space="preserve">
+    <value>Тип трубы</value>
+  </data>
+  <data name="cImportIsRun1" xml:space="preserve">
+    <value>Процедура импорта запущена, импорт: </value>
+  </data>
+  <data name="cImportIsRun2" xml:space="preserve">
+    <value> нельзя начать новый импорт или продолжить не завершенный</value>
+  </data>
+  <data name="tbNoDataDog1" xml:space="preserve">
+    <value>На выбранном участке ВТД и на основании договора</value>
+  </data>
+  <data name="tbNoDataDog2" xml:space="preserve">
+    <value>уже ранее был произведен импорт данных ВТД. Для проведения импорта данных на основании договора</value>
+  </data>
+  <data name="tbNoDataDog3" xml:space="preserve">
+    <value>необходимо удалить предыдущий импорт ВТД, выполненный на его основании</value>
+  </data>
+  <data name="tbNoDataDog4" xml:space="preserve">
+    <value>Выберите иной номер договора на проведение ВТД</value>
+  </data>
+  <data name="gbReperLink" xml:space="preserve">
+    <value>Сопоставленные объекты на участке</value>
+  </data>
+  <data name="cStartImport" xml:space="preserve">
+    <value>Начать импорт</value>
+  </data>
+  <data name="cCouldNotLoadFile" xml:space="preserve">
+    <value>Не удалось получить доступ к файлу</value>
+  </data>
+  <data name="cStatistics" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+</root>

@@ -1,0 +1,42 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:telerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView" 
+             xmlns:importVtd="clr-namespace:importVtd.Controls" mc:Ignorable="d"
+             x:Class="importVtd.Controls.MapTube" >
+
+    <Controls:Grid xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows" x:Name="LayoutRoot" Background="White">
+        <Controls:Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Controls:Grid.RowDefinitions>
+        
+        <telerikGridView:RadGridView x:Name="GrdBoundedObjs" Grid.Row="0" HorizontalAlignment="Stretch"
+                                     VerticalAlignment="Stretch" ShowGroupPanel="False" CanUserReorderColumns="False"
+                                     CanUserSortColumns="False" IsReadOnly="True" IsSynchronizedWithCurrentItem="True" 
+                                     AutoGenerateColumns="False" GridLinesVisibility="Horizontal" FontSize="10"
+                                     SelectionChanged="grdBoundedObjs_SelectionChanged">
+
+            <telerikGridView:RadGridView.Columns>
+                <telerikGridView:GridViewDataColumn Header="Км из БД" DataMemberBinding="{Binding loc_km_begDB}"   />
+                <telerikGridView:GridViewDataColumn Header="Длина из БД" DataMemberBinding="{Binding nlengthDB}"/>
+                <telerikGridView:GridViewDataColumn Header="Глубина из БД" DataMemberBinding="{Binding ndepth_pipeDB}"/>
+                <telerikGridView:GridViewDataColumn Header="тип из БД" DataMemberBinding="{Binding cTypeDB}"/>
+                <telerikGridView:GridViewDataColumn Header="Угол из БД" DataMemberBinding="{Binding nAngleDB}"/>
+                <telerikGridView:GridViewDataColumn Header="" DataMemberBinding="{Binding stringTemplate}"/>
+                <telerikGridView:GridViewDataColumn Header="Км из файла" DataMemberBinding="{Binding loc_km_begFile}"   />
+                <telerikGridView:GridViewDataColumn Header="Длина из файла" DataMemberBinding="{Binding nlengthFile}"/>
+                <telerikGridView:GridViewDataColumn Header="Глубина из файла" DataMemberBinding="{Binding ndepth_pipeFile}"/>
+                <telerikGridView:GridViewDataColumn Header="тип из файла" DataMemberBinding="{Binding cTypeFile}"/>
+                <telerikGridView:GridViewDataColumn Header="Угол из файла" DataMemberBinding="{Binding nAngleFile}"/>
+            </telerikGridView:RadGridView.Columns>
+        </telerikGridView:RadGridView>
+
+        <Button x:Name="BtnUndoBound" Grid.Row="1" Content="Отменить одну связь"
+        	    Click="btnUndoBound_Click" Width="139" Height="23" HorizontalAlignment="Left" />
+        <Button x:Name="BtnUndoBoundAll" Content="Отменить выделенную связь и все ниже"
+        	    Click="btnUndoBoundAll_Click" Width="257" Height="23" HorizontalAlignment="Right"
+        	    Controls:Grid.Row="2" />
+    </Controls:Grid>
+</UserControl>

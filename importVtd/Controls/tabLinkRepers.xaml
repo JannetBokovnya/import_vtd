@@ -1,0 +1,178 @@
+﻿<UserControl x:Class="importVtd.Controls.TabLinkRepers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <telerik:Label x:Name="LbreperSection" FontWeight="Bold" FontFamily="Tahoma" FontSize="12" 
+                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <telerik:GroupBox Grid.Column="0" BorderBrush="#FF999A9C">
+                <telerik:GroupBox.Header>
+                    <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.Repergb1, Mode=OneWay}"
+                                   Style="{StaticResource LabelInGroupStyle}" />
+                </telerik:GroupBox.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+                    <telerikGridView:RadGridView x:Name="GrdReperLeft" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                                                 ColumnWidth="*" IsFilteringAllowed="False" RowIndicatorVisibility="Collapsed"
+			                                     ShowGroupPanel="False" CanUserReorderColumns="False" CanUserSortColumns="False" 
+                                                 IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="1"
+                                                 AlternationCount="2" SelectionChanged="GrdsReper_OnSelectionChanged">
+                    <telerikGridView:RadGridView.Columns>
+
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Name}"  HeaderTextAlignment="Center" 
+                                                            Header="KeyDefect" IsVisible="False"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Km}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cKmOnMg, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding ObjType}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.ReperTypeobj, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Name}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.ReperName, Mode=OneWay}"/>
+                    </telerikGridView:RadGridView.Columns>
+                </telerikGridView:RadGridView>
+                </Grid>
+            </telerik:GroupBox>
+            <telerik:RadButton x:Name="BtnBind"  Grid.Column="1" VerticalAlignment="Top" Margin="8,100,8,8" 
+                               Height="30" Width="30" Click="btnBind_Click" IsEnabled="False">
+                <Image Source="/importVtd;component/Images/link-manual-24.png" Stretch="None"
+                       ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.BuDictDefectMap, Mode=OneWay}"
+                       HorizontalAlignment="Center" >
+                </Image>
+            </telerik:RadButton>
+            <telerik:GroupBox  Grid.Column="2" BorderBrush="#FF999A9C">
+                <telerik:GroupBox.Header>
+                    <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.Repergb2, Mode=OneWay}"
+                                   Style="{StaticResource LabelInGroupStyle}" />
+                </telerik:GroupBox.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+                    <telerikGridView:RadGridView x:Name="GrdReperRight"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ColumnWidth="*"
+                                             IsFilteringAllowed="False" RowIndicatorVisibility="Collapsed" CanUserDeleteRows="False"
+                                             CanUserInsertRows="False" ShowGroupPanel="False" CanUserReorderColumns="False"
+                                             CanUserSortColumns="False" IsReadOnly="True" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1"
+                                             AlternationCount="2" SelectionChanged="GrdsReper_OnSelectionChanged">
+                    <telerikGridView:RadGridView.Columns>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding RawKey}"  HeaderTextAlignment="Center" 
+                                  Header="KeyReperFile" IsVisible="False"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Km}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                 Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cKmOnVtd, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Type}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                  Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.ReperTypeobj, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Desc}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                  Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.ReperName, Mode=OneWay}"/>
+                    </telerikGridView:RadGridView.Columns>
+                </telerikGridView:RadGridView>
+                </Grid>
+            </telerik:GroupBox>
+        </Grid>
+        
+        <controls:GridSplitter Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="5" 
+                               Margin="5,5,5,0"  Background="#FFECECEC" BorderThickness="10"  >
+            <controls:GridSplitter.BorderBrush>
+                <SolidColorBrush Color="Red"/>
+            </controls:GridSplitter.BorderBrush>
+        </controls:GridSplitter>
+        <telerik:GroupBox  Grid.Row="3" BorderBrush="#FF999A9C">
+            <telerik:GroupBox.Header>
+                <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.gbReperLink, Mode=OneWay}"
+                               Style="{StaticResource LabelInGroupStyle}" />
+            </telerik:GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <telerik:RadButton HorizontalAlignment="Left" x:Name="BtnUndo" Height="30" Width="30"
+                                   Click="BtnUndo_OnClick" IsEnabled="{Binding SelectedItem, TargetNullValue=False, ElementName=GrdReperBound}" >
+                    <Image Source="/importVtd;component/Images/link-del-24.png" Stretch="None"
+                           ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.BuDictDefectDeleteMap, Mode=OneWay}"/>
+                </telerik:RadButton>
+                <telerikGridView:RadGridView Grid.Row="1" x:Name="GrdReperBound" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                                             ColumnWidth="*" RowLoaded="GrdReperBound_OnRowLoaded" SelectionMode="Multiple"
+                                             IsFilteringAllowed="False" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" 
+                                             CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True" 
+                                             AutoGenerateColumns="False" AlternateRowBackground="#e8f0f5" AlternationCount="2">
+                    <telerikGridView:RadGridView.Columns>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding cname}"  HeaderTextAlignment="Center" Header="KeyDefect" IsVisible="False"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding num}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.ReperNumberLink, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding kmByMG}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cKmOnMg, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding kmByVTD}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cKmOnVtd, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding lenByMG}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.ReperLenMG, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding lenByVTD}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.ReperLenVTD, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding differenceInKm}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.ReperNumberSec, Mode=OneWay}"/>
+                        <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding koef}" TextAlignment="Left" HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                            Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.ReperMK, Mode=OneWay}"/>
+                    </telerikGridView:RadGridView.Columns>
+                </telerikGridView:RadGridView>
+            </Grid>
+        </telerik:GroupBox>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <telerik:RadButton Grid.Row="1" Grid.Column="1" x:Name="BtnCancel" 
+                               HorizontalAlignment="Left" Click="BtnCancel_OnClick">
+                <telerik:RadButton.Content>
+                    <Image  Source="/importVtd;component/Images/left.png"  />
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton Grid.Row="1" Grid.Column="2" x:Name="BuNext" Click="BuNext_OnClick" 
+                               HorizontalAlignment="Right">
+                <telerik:RadButton.Content>
+                    <Image  Source="/importVtd;component/Images/right.png"  />
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+        </Grid>
+    </Grid>
+</UserControl>

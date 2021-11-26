@@ -1,0 +1,281 @@
+﻿<UserControl x:Class="importVtd.Controls.CompareTubeVtd"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:telerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+             xmlns:gridView="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Telerik.Windows.Controls.GridView"
+             xmlns:control2="clr-namespace:DrawPipe2D.View.Control"
+             xmlns:animation="clr-namespace:Telerik.Windows.Controls.Animation;assembly=Telerik.Windows.Controls"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700">
+    <UserControl.Resources>
+        <Style TargetType="gridView:GridViewRow" x:Key="RowStyle">
+            <Setter Property="Background" Value="Green"/>
+        </Style>
+    </UserControl.Resources>
+   
+    <Grid  Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <telerik:Label x:Name="LbCompareTube" FontWeight="Bold" FontFamily="Tahoma" FontSize="12" 
+                        VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5"/>
+
+        <Grid Grid.Row="1" x:Name="LayoutRoot">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="109*"/>
+                <ColumnDefinition Width="891*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions >
+                <RowDefinition />
+                <RowDefinition Height="150" />
+            </Grid.RowDefinitions>
+            <Grid Margin="0,-23,0,23" Grid.ColumnSpan="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <telerik:GroupBox Grid.Column="0" Grid.RowSpan="9" BorderBrush="#FF999A9C">
+                    <telerik:GroupBox.Header>
+                        <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cTemFromDB, Mode=OneWay}" 
+                                       Style="{StaticResource LabelInGroupStyle}" />
+                    </telerik:GroupBox.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="5"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+                        <telerikGridView:RadGridView x:Name="GrdTubeBdLeft" ItemsSource="{Binding PagedSource, ElementName=RadDataPager}"
+                                                     AlternationCount="2" RowLoaded="GrdTubeBdLeft_OnRowLoaded"
+                                                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1"
+                                                     ColumnWidth="*" IsFilteringAllowed="False" RowIndicatorVisibility="Collapsed"
+			                                         ShowGroupPanel="False" CanUserReorderColumns="False" 
+			                                         CanUserSortColumns="False" IsReadOnly="True" SelectionMode="Extended"
+                                                     AutoGenerateColumns="False" SelectionChanged="grdTubeBDLeft_SelectionChanged">
+                            <telerikGridView:RadGridView.Columns>
+                                <telerikGridView:GridViewDataColumn Header="" 
+                                                                    DataMemberBinding="{Binding PipeElementMontajKey}" IsVisible="False" />
+                                <telerikGridView:GridViewDataColumn Header="№" DataMemberBinding="{Binding NumPipePart}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cKmM, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding LocKmBeg}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cLengthM, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding Length}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cThicknessMm, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding DepthPipe}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cAngleHour, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding Angle}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cType, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding Type}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cDefects, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding Count}" />
+                            </telerikGridView:RadGridView.Columns>
+                        </telerikGridView:RadGridView>
+                    </Grid>
+                </telerik:GroupBox>
+
+                <telerik:RadButton Grid.Column="1" Grid.Row="1" x:Name="BtnBind" HorizontalAlignment="Center" 
+                                    IsEnabled="False" Click="BtnBind_OnClick" >
+                    <Image Source="/importVtd;component/Images/link-manual-24.png" Stretch="None"
+                           ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.BuDictDefectMap, Mode=OneWay}"
+                           HorizontalAlignment="Center" >
+                    </Image>
+                </telerik:RadButton>
+
+                <telerik:RadButton Grid.Column="1" Grid.Row="3" x:Name="BtnBindAuto" HorizontalAlignment="Center" 
+                                   IsEnabled="False" Click="BtnBindAuto_OnClick" >
+                    <Image Source="/importVtd;component/Images/link-auto-24.png" Stretch="None"
+                           ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cAutoLink, Mode=OneWay}"
+                           HorizontalAlignment="Center" >
+                    </Image>
+                </telerik:RadButton>
+
+                <telerik:RadButton Grid.Column="1" Grid.Row="5" x:Name="BtnNoBind"  HorizontalAlignment="Center"  
+                                   Click="BtnNoBind_OnClick" IsEnabled="{Binding SelectedItem, TargetNullValue=False, ElementName=GrdTubeFileRight}" >
+                    <Image Source="/importVtd;component/Images/without-link-24.png" Stretch="None"
+                           ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cAddWithoutLink, Mode=OneWay}"
+                           HorizontalAlignment="Center" >
+                    </Image>
+                </telerik:RadButton>
+
+                <telerik:RadButton  Grid.Column="1" Grid.Row="7" x:Name="BtnUndo" HorizontalAlignment="Center"
+                                    Click="BtnUndo_OnClick" IsEnabled="{Binding SelectedItem, TargetNullValue=False, ElementName=GrdTubeBound}">
+                    <Image Source="/importVtd;component/Images/link-del-24.png" Stretch="None"
+                           ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.BuDictDefectDeleteMap, Mode=OneWay}"/>
+                </telerik:RadButton>
+
+                <telerik:GroupBox  Grid.Column="2" Grid.RowSpan="9" BorderBrush="#FF999A9C">
+                    <telerik:GroupBox.Header>
+                        <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cTemFromFile, Mode=OneWay}" 
+                                        Style="{StaticResource LabelInGroupStyle}" />
+                    </telerik:GroupBox.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="5"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+                        <telerikGridView:RadGridView x:Name="GrdTubeFileRight" Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" 
+                                                     HorizontalAlignment="Stretch" ColumnWidth="*" IsFilteringAllowed="False" ShowGroupPanel="False" 
+                                                     RowIndicatorVisibility="Collapsed" CanUserDeleteRows="False" CanUserInsertRows="False" 
+                                                     CanUserReorderColumns="False" CanUserSortColumns="False" 
+                                                     IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="GrdTubeFileRight_OnSelectionChanged" 
+                                                     SelectionMode="Extended" AutoExpandGroups="True" AlternationCount="2">
+                            <telerikGridView:RadGridView.Columns>
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cKey, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding PipeElementMontajKey}" IsVisible="False" />
+                                <telerikGridView:GridViewDataColumn Header="№" DataMemberBinding="{Binding NumPipePart}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cKmM, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding LocKmBeg}" UniqueName="LocKmBeg"  />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cLengthM, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding Length}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cThicknessMm, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding DepthPipe}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cAngleHour, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding Angle}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cType, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding Type}" />
+                                <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cDefects, Mode=OneWay}" 
+                                                                    DataMemberBinding="{Binding Count}" />
+                            </telerikGridView:RadGridView.Columns>
+
+                        </telerikGridView:RadGridView>
+                    </Grid>
+
+                </telerik:GroupBox>
+            </Grid>
+            <Grid Grid.Row="1" Background="White" x:Name="GrdPipeControls" Grid.ColumnSpan="2">
+                <telerik:RadExpander x:Name="RadExpander" IsExpanded="True" VerticalContentAlignment="Top"
+                                     Collapsed="RadExpander_OnCollapsed" Expanded="RadExpander_OnExpanded"
+								     animation:AnimationManager.IsAnimationEnabled="{Binding ElementName=AnimationEnableCheckBox, Path=IsChecked}">
+
+                    <telerik:RadExpander.Header>
+                        <TextBlock x:Name="ExpanderCaption" Text= "{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cLayoutOfPipe, Mode=OneWay}"  />
+                    </telerik:RadExpander.Header>
+
+                    <Grid  Background="White" x:Name="PipeControls">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <telerik:Label Grid.Row="0" Grid.Column="0" Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cDB, Mode=OneWay}" />
+                        <control2:PipeControl Grid.Row="0" Grid.Column="1" x:Name="PipeControlBd" VerticalAlignment="Stretch" />
+
+                        <telerik:Label Grid.Row="1" Grid.Column="0" Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cFile, Mode=OneWay}" />
+                        <control2:PipeControl Grid.Row="1" Grid.Column="1" x:Name="PipeControlFile" VerticalAlignment="Stretch" />
+
+                    </Grid>
+                </telerik:RadExpander>
+            </Grid>
+           
+        </Grid>
+
+        <controls:GridSplitter Grid.Row="2" HorizontalAlignment="Stretch"
+                                VerticalAlignment="Top" Height="5"/>
+
+        <telerik:GroupBox  Grid.Row="2" BorderBrush="#FF999A9C">
+            <telerik:GroupBox.Header>
+                <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cLinkedPipeMountingComponents, Mode=OneWay}"
+                               Style="{StaticResource LabelInGroupStyle}" />
+            </telerik:GroupBox.Header>
+
+            <telerikGridView:RadGridView x:Name="GrdTubeBound"
+                                         VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ColumnWidth="*"
+                                         SelectionMode="Extended" IsFilteringAllowed="False" RowIndicatorVisibility="Collapsed"
+			                             ShowGroupPanel="False" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True" 
+                                         AutoGenerateColumns="False" AlternationCount="2"
+                                         SelectionChanged="GrdTubeBound_OnSelectionChanged">
+
+                <telerikGridView:RadGridView.ColumnGroups >
+                    <telerikGridView:GridViewColumnGroup  Name="IsBD" Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cTemFromDB, Mode=OneWay}"  />
+                    <telerikGridView:GridViewColumnGroup  Name="IsFile" Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cTemFromFile, Mode=OneWay}" />
+                </telerikGridView:RadGridView.ColumnGroups>
+                <telerikGridView:RadGridView.Columns>
+                    <telerikGridView:GridViewDataColumn Header="KeyDB"  DataMemberBinding="{Binding KeyDb}"  ColumnGroupName="IsBD" IsVisible="False" />
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cNumber, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding NumPipePartDb}"   ColumnGroupName="IsBD"  />
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cKmM, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding LocKmBegDb}"  ColumnGroupName="IsBD" />
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cLengthM, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding LengthDb}" ColumnGroupName="IsBD"/>
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cThicknessMm, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding DepthPipeDb}" ColumnGroupName="IsBD"/>
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cType, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding TypeDb}" ColumnGroupName="IsBD"/>
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cAngleHour, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding AngleDb}" ColumnGroupName="IsBD"/>
+                    <telerikGridView:GridViewDataColumn Header="" DataMemberBinding="{Binding StringTemplate}" IsVisible="False" ColumnGroupName="IsBD"/>
+                    <telerikGridView:GridViewDataColumn Header="KeyFile" DataMemberBinding="{Binding KeyFile}"  ColumnGroupName="IsFile" IsVisible="False" />
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cNumber, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding NumPipePartFile}" ColumnGroupName="IsFile" />
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cKmM, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding LocKmBegFile}"  ColumnGroupName="IsFile"  />
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cLengthM, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding LengthFile}" ColumnGroupName="IsFile" />
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cThicknessMm, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding DepthPipeFile}" ColumnGroupName="IsFile" />
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cType, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding TypeFile}" ColumnGroupName="IsFile" />
+                    <telerikGridView:GridViewDataColumn Header="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cAngleHour, Mode=OneWay}" 
+                                                        DataMemberBinding="{Binding AngleFile}" ColumnGroupName="IsFile" />
+                </telerikGridView:RadGridView.Columns>
+            </telerikGridView:RadGridView>
+        </telerik:GroupBox>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <telerik:RadButton Grid.Row="1" Grid.Column="1" x:Name="BtnCancel" Click="BtnCancel_OnClick"
+                                HorizontalAlignment="Left">
+                <telerik:RadButton.Content>
+                    <Image  Source="/importVtd;component/Images/left.png"  />
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton Grid.Row="1" Grid.Column="2" x:Name="BuNext"   Click="BuNext_OnClick" HorizontalAlignment="Right" 
+                               Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cStartImport, Mode=OneWay}">
+            </telerik:RadButton>
+        </Grid>
+    </Grid>
+
+</UserControl>

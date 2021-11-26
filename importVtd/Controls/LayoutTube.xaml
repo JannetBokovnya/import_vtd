@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="importVtd.Controls.LayoutTube"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:telerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+             xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+             Loaded="LayoutTube_OnLoaded" >
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <telerik:Label x:Name="lbreperSection" Content="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.cLayoutOfPipe, Mode=OneWay}" FontWeight="Bold" FontFamily="Tahoma" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <telerikGridView:RadGridView Grid.Row="1" x:Name="GrdLayoutTube" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                                     ColumnWidth="*" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" CanUserReorderColumns="False" 
+                                     CanUserSortColumns="False" IsReadOnly="True" AutoGenerateColumns="False" FontSize="11" FontFamily="Tahoma"
+                                     Margin="5" AlternateRowBackground="#e8f0f5" AlternationCount="2">
+            <telerikGridView:RadGridView.Columns>
+
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding PipeNo}" 
+                                                    TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.tubeJornalNumberTube, Mode=OneWay}"/>
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Km}"
+                                                    TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.cKmOnVtd, Mode=OneWay}"/>
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding MgKm}"
+                                                    TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.cKmOnMg, Mode=OneWay}"/>
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding SecNo}"  
+                                                    TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.tubeJornalSecLink, Mode=OneWay}"/>
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Length}"   
+                                                    TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.tubeJornalLenghtVTD, Mode=OneWay}"/>
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding MgLenght}"   
+                                                    TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.tubeJornalLenghtMG, Mode=OneWay}"/>
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Thickness}"  
+                                                    TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.tubeJornalThick, Mode=OneWay}"/>
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding Type}"  
+                                                    TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.tubeJornalType, Mode=OneWay}"/>
+                <telerikGridView:GridViewDataColumn DataMemberBinding="{Binding DefCount}"   
+                                                    TextAlignment="Center"  HeaderTextAlignment="Center" TextWrapping="Wrap"
+                                                    Header="{Binding Source={StaticResource ResProvider}, Path= Resources_ImpVtd.tubeJornalNumberD, Mode=OneWay}"/>
+            </telerikGridView:RadGridView.Columns>
+        </telerikGridView:RadGridView>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <telerik:RadButton Grid.Row="1" Grid.Column="1" x:Name="BtnCancel" 
+                               HorizontalAlignment="Left" IsEnabled="False">
+                <telerik:RadButton.Content>
+                    <Image  Source="/importVtd;component/Images/left.png"  />
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton Grid.Row="1" Grid.Column="2" x:Name="BtnNext" Click="BuNext_OnClick" HorizontalAlignment="Right" 
+                               Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cStartImport, Mode=OneWay}">
+            </telerik:RadButton>
+           
+        </Grid>
+    </Grid>
+</UserControl>

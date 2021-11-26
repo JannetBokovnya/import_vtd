@@ -1,0 +1,31 @@
+# Ignore file for Visual Studio 2008
+
+# use glob syntax
+syntax: glob
+
+# Ignore Visual Studio 2008 files
+*.obj
+*.orig
+*.exe
+*.pdb
+*.user
+*.aps
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.log
+*.suo
+*.lib
+*.txt
+[Bb]in/
+*/[Db]ebug/**
+*/obj/**
+*/[Rr]elease/**
+_ReSharper*/
+*/[Tt]est[Rr]esult/**
+*/UnitTests/bin/**
+*/UnitTests/obj/**
+
+

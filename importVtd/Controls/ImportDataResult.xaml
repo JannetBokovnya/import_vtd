@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="importVtd.Controls.ImportDataResult"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+             Loaded="ImportDataResult_OnLoaded">
+    <UserControl.Resources>
+        <Style x:Key="myStyle" TargetType="telerik:RadProgressBar">
+            <Setter Property="Background" Value="Green" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <telerik:Label  Margin="5" Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cImportStatus, Mode=OneWay}"  FontFamily="Tahoma" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <telerik:Label x:Name="LblStatusImport" Grid.Column="1"  Margin="5"  FontFamily="Tahoma" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </Grid>
+        <telerik:Label x:Name="LblNameSection"   Grid.Row="0" Content="" FontWeight="Bold" FontFamily="Tahoma" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <telerik:Label x:Name="LblNameSection2" Grid.Row="2"  Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cDataImport, Mode=OneWay}"  FontFamily="Tahoma" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <controlsToolkit:BusyIndicator x:Name="BusyIndicatorAll1" IsBusy="True" DisplayAfter="0" Grid.Row="3" />
+        <telerik:GroupBox x:Name="GbStatictikImportData" Margin="5" Grid.Row="4" BorderBrush="#FF999A9C" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:GroupBox.Header>
+                <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cDataImportState, Mode=OneWay}" Foreground="#FF555454" 
+                               Background="Transparent" FontWeight="Bold" />
+            </telerik:GroupBox.Header>
+            <TextBox x:Name="TxtStatistikImportData" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                     TextWrapping="Wrap"  VerticalScrollBarVisibility="Auto" IsReadOnly="True" />
+        </telerik:GroupBox>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <telerik:GroupBox x:Name="GbStatistikImport" Margin="5" Grid.Column="0" BorderBrush="#FF999A9C" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <telerik:GroupBox.Header>
+                    <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cStaticticsOfImport, Mode=OneWay}" 
+                                   Style="{StaticResource LabelInGroupStyle}" />
+                </telerik:GroupBox.Header>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="5" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cLinkedBenchmarkNumber, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="0" Grid.Column="3" x:Name="txtNumberReper" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cBenchmarkDensityPerKm, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="1" Grid.Column="3" x:Name="txtPlotReper" Text="" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cAverageCoefficientOnASite, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="2" Grid.Column="3" x:Name="txtKoef" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cPipeElementNumber, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="3" Grid.Column="3" x:Name="txtNumberTub" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cMagneticAnomalyNumber, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="4" Grid.Column="3" x:Name="txtNumberMagAnom" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cDefectNumber, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="5" Grid.Column="3" x:Name="txtNumberDefect" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                </Grid>
+            </telerik:GroupBox>
+            <telerik:GroupBox x:Name="gbStatistikDefect" Margin="5" Grid.Column="1" BorderBrush="#FF999A9C" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <telerik:GroupBox.Header>
+                    <telerik:Label Content="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cStatisticsOfDefectsByGroups, Mode=OneWay}" 
+                                   Style="{StaticResource LabelInGroupStyle}" />
+                </telerik:GroupBox.Header>
+                
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="5" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cСorrosionDefects, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="0" Grid.Column="3" x:Name="txtKoorozDefect" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cFormDefects, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="1" Grid.Column="3" x:Name="txtDefectForm" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cCrackLikeDefects, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="2" Grid.Column="3" x:Name="txtTrDefect" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cStressCorrosion, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="3" Grid.Column="3" x:Name="txtStresKor" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cWeldAnomalies, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="4" Grid.Column="3" x:Name="txtAnomShov" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Source={StaticResource ResProvider}, Path=Resources_ImpVtd.cOffDesignAnomalies, Mode=OneWay}" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="5" Grid.Column="3" x:Name="txtNerasAnom" Text="" VerticalAlignment="Center"  HorizontalAlignment="Stretch" />
+
+                </Grid>
+            </telerik:GroupBox>
+        </Grid>
+    </Grid>
+</UserControl>
